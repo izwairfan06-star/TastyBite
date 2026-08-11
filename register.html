@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register-link</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+     nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav h1 { font-size: 2rem; }
+    nav ul { list-style: none; display: flex; }        nav ul li { margin-left: 1rem; }
+    nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+    nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .reg_form{
+        max-width: 1000px; 
+        margin-left: 70px;
+    }
+    .reg_form input{
+        width: 60%; margin-bottom: 1rem; padding: 0.5rem; margin-left: 50px; 
+    }
+    .register_form{
+         background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); margin: 2rem 0; 
+    }
+    .reg_form button { background: #e74c3c; color: white; border: none; cursor: pointer;  width: 60%; margin-bottom: 1rem; padding: 0.5rem; margin-left: 50px; border-radius: 4%; }
+    footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+    </style>
+
+</head>
+<body>
+    <header style="background: #e74c3c; color: white;  text-align: center; padding: 1rem;  height: 80px; width: 1300px; ">
+        <nav>
+            <h1 style="font-size: 2rem;">TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="reg_form">
+        <h1 style="text-align: center;">Register</h1>
+        <p style="text-align: center;">Kindly fill in this form to register.</p>
+        <form class="register_form" id="register-form-element">
+            <h3>Username:</h3>
+            <input type="text" id="text" placeholder="Enter Username" required><br>
+            <h3>Email</h3>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <h3>Password</h3>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <h3> Enter Password</h3>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Register</button>
+            </form>
+            <b><p>Do you have an account? <a href="login.html">Login here</a></p></b>
+    </div>
+       <footer><p>&copy; 2025 TastyBite. All rights reserved.</p></footer> 
+    <script>
+        document.getElementById('register-form-element').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if (email && password) {
+                alert(`Registered in as ${email}! `);
+                this.reset();
+            }
+        });
+
+    </script>
+
+</body>
+</html>

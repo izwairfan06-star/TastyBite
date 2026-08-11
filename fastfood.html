@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastFood</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+     footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+      nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav h1 { font-size: 2rem; }
+    nav ul { list-style: none; display: flex; }        nav ul li { margin-left: 1rem; }
+    nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+    nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .actions{
+        padding: 1rem; display: flex; justify-content: space-between; 
+    }
+    .actions button{
+        background: #e74c3c; color: white; border: none; padding: 0.5rem; cursor: pointer; border-radius: 4px; }
+    .actions button:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <header style="background: #e74c3c; color: white;  text-align: center; padding: 1rem; height: 80px; width: 1300px;">
+        <nav>
+            <h1 style="font-size: 2rem;">TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <nav style="background-color: #de2915; margin-top: 15px; height: 50px; justify-content: space-evenly; align-items: center; ">
+            <ul>
+                <li><a href="fastfood.html">Fast Foods</a></li>
+                <li><a href="Traditional.html">Traditional Foods</a></li>
+                <li><a href="Streetfood.html">Street Foods</a></li>
+                <li><a href="Appetizer.html">Appitizers</a></li>
+                <li><a href="chineese.html">Chineese</a></li>
+                <li><a href="turkish.html">Turkish Foods</a></li>
+                <li><a href="desserts.html">Desserts</a></li>
+                <li><a href="beverages.html">Beverages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="index" style="display: flex; justify-content: space-between; padding-top: 6%;">
+        <p><b style="font-size: larger; text-decoration: underline;">Fast Foods:</b> Discover the charm of fast food made at home—fresh, flavorful, and crafted with love. Our recipes turn your favorite cravings into easy, delicious creations that are perfect for every mood and moment. #FoodieParadise #HappyRecipes#FoodLoversDelight<br><br><b style="text-decoration: underline;">Contact:</b> +92 309566755 / +92 333 4445557<br><br><b style="text-decoration: underline;">Email:</b>  tastybite123@gamil.com / TastyBites098@gmail.com <br><br><b style="text-decoration: underline;">Link:</b> https://www.tastybite.com</p>
+        <br>
+        <img src="fastfood.jpg" style="margin: 0%; height: 300px; width: 1000px;">
+    </div>
+    <h2>Fast Foods Recipes:</h2>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--1. chickenwraps-->
+        <div style="height: 400px; width: 400px;"><h3>Chicken Wrap</h3><div style="background-image: url('chicken\ wrap.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Chicken Wraps')">View Recipe</button><button><a href=" https://youtu.be/e0cH5WwNokg?si=8XmJj2tPdhMpib-_" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--2.	Spicy Wings-->
+        <div style="height: 400px; width: 400px;"><h3>Spicy Wings</h3><div style="background-image: url('spicywings.jpg'); height: 300px; width: 300px; background-size: cover; "></div> <div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Spicy Wings')">View Recipe</button><button><a href="https://youtu.be/MIG41ij6lPw?si=1kLtbv-x5hCgdvYm" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--3. Crispy Chicken Burger-->
+        <div style="height: 400px; width: 400px;"><h3>Crispy chicken burger</h3><div style="background-image: url('crispychickenburger.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Crispy Chicken Burger')">View Recipe</button><button><a href="https://youtu.be/Ub06gV4gzxc?si=gKwoRWx2OYV8BYoZ" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--4. Nuggets-->
+        <div style="height: 400px; width: 400px;"><h3>Nuggets</h3><div style="background-image: url('nuggets.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Nuggets')">View Recipe</button><button><a href="https://youtu.be/njJ8FQXZmcE?si=o93JGgn1tBx6yneJ" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--5. Pizza-->
+        <div style="height: 400px; width: 400px;"><h3>Pizza</h3><div style="background-image: url('pizza.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Pizza')">View Recipe</button><button><a href="https://youtu.be/g79YVb0Exx8?si=8z6J_c5gxsC1S8P5" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--6. Sandwich-->
+        <div style="height: 400px; width: 400px;"><h3>Sandwich</h3><div style="background-image: url('sandwich.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Sandwich')">View Recipe</button><button><a href="https://youtu.be/uVay-zZillc?si=9a_nNSw3Ga75Qflg" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--7. Shawarma-->
+        <div style="height: 400px; width: 400px;"><h3>Shawarma </h3><div style="background-image: url('shawarma.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Shawarma')">View Recipe</button><button><a href="https://youtu.be/rd_56ytV5TI?si=ent0vNL1Kx90dbtw" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--Mozzarella Sticks-->
+        <div style="height: 400px; width: 400px;"><h3>Mozzarella Sticks</h3><div style="background-image: url('morzilla.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Mozzarella Sticks')">View Recipe</button><button><a href="https://youtu.be/DExn2rQoG4w?si=TGAj1fTaQyvlv3Ih" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <footer>
+        <p>&copy; 2025 TastyBite. All rights reserved.</p>
+    </footer>
+    <script>
+        // View recipe (redirects to detail page)
+        function viewRecipe(title) {
+            window.location.href = `recipe-detail.html?title=${encodeURIComponent(title)}`;
+        }
+        // Favorite buttons
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Added to favorites!');
+            });
+        });
+    </script>
+</body>
+</html>

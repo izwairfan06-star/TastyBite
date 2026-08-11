@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chineese</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+     footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+      nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav h1 { font-size: 2rem; }
+    nav ul { list-style: none; display: flex; }        nav ul li { margin-left: 1rem; }
+    nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+    nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .actions{
+        padding: 1rem; display: flex; justify-content: space-between; 
+    }
+    .actions button{
+        background: #e74c3c; color: white; border: none; padding: 0.5rem; cursor: pointer; border-radius: 4px; }
+    .actions button:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <header style="background: #e74c3c; color: white;  text-align: center; padding: 1rem; height: 80px; width: 1300px;">
+        <nav>
+            <h1 style="font-size: 2rem;">TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <nav style="background-color: #de2915; margin-top: 15px; height: 50px; justify-content: space-evenly; align-items: center; ">
+            <ul>
+                <li><a href="fastfood.html">Fast Foods</a></li>
+                <li><a href="Traditional.html">Traditional Foods</a></li>
+                <li><a href="Streetfood.html">Street Foods</a></li>
+                <li><a href="Appetizer.html">Appitizers</a></li>
+                <li><a href="chineese.html">Chineese</a></li>
+                <li><a href="turkish.html">Turkish Foods</a></li>
+                <li><a href="desserts.html">Desserts</a></li>
+                <li><a href="beverages.html">Beverages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="index" style="display: flex; justify-content: space-between; padding-top: 6%;">
+        <p><b style="font-size: larger; text-decoration: underline;">Chineese:</b>Chinese food is a harmony of contrasts—soft and crisp, sweet and sharp, simple ingredients elevated by centuries of craft.A sip of hot tea between dishes is the pause that lets the flavors speak#FoodieParadise#HappyRecipes#FoodLoversDelight<br><br><b style="text-decoration: underline;">Contact:</b> +92 309566755 / +92 333 4445557<br><br><b style="text-decoration: underline;">Email:</b>  tastybite123@gamil.com / TastyBites098@gmail.com <br><br><b style="text-decoration: underline;">Link:</b> https://www.tastybite.com</p>
+        <br>
+        <img src="chineese.jpg" style="margin: 0%; height: 300px; width: 1000px;">
+    </div>
+    <h2>Chineese Recipes:</h2>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--1. Kung Pao Chicken-->
+        <div style="height: 400px; width: 400px;"><h3>Kung Pao Chicken</h3><div style="background-image: url('kung_pao_chicken.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Kung Pao Chicken')">View Recipe</button><button><a href="https://youtu.be/dkIBr4jN54I?si=093RbT170XVak7X_" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--2.	Sweet and Sour Pork-->
+        <div style="height: 400px; width: 400px;"><h3>Sweet and Sour Pork</h3><div style="background-image: url('sweet_sour_pork.jpg'); height: 300px; width: 300px; background-size: cover; "></div> <div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Sweet and Sour Pork')">View Recipe</button><button><a href="https://youtu.be/gda9wq89E14?si=wV3MIONMtsCr3abA" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--3. Peking Duck-->
+        <div style="height: 400px; width: 400px;"><h3>Peking Duck</h3><div style="background-image: url('peking_duck.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Peking Duck')">View Recipe</button><button><a href="https://youtu.be/nNiGyTWODh8?si=2dbBsjdXzG4P5BbK" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--4. Mapo Tofu-->
+        <div style="height: 400px; width: 400px;"><h3>Mapo Tofu</h3><div style="background-image: url('mapo_tofu.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Mapo Tofu')">View Recipe</button><button><a href="https://youtu.be/z_yxN6AbGL4?si=qoBQTvj4yVLyaFoA" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--5. Dumplings-->
+        <div style="height: 400px; width: 400px;"><h3>Dumplings</h3><div style="background-image: url('dumplings.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Dumplings')">View Recipe</button><button><a href="https://youtu.be/PcZt5tJjYkk?si=b9yqnv5uzjuU_ZYF" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--6. Hot Pot-->
+        <div style="height: 400px; width: 400px;"><h3>Hot Pot</h3><div style="background-image: url('hot_pot.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Hot Pot')">View Recipe</button><button><a href="https://youtu.be/zYau4In7VrU?si=h1-7-H3smCzPR1Nw" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--7. Chow mein-->
+        <div style="height: 400px; width: 400px;"><h3>Chow mein </h3><div style="background-image: url('chow_mein.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Chow Mein')">View Recipe</button><button><a href="https://youtu.be/r5zwrLjxdT8?si=GksgezarzwxlFFGn" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--8.Spring Rolls-->
+        <div style="height: 400px; width: 400px;"><h3>Spring Rolls</h3><div style="background-image: url('spring_rolls.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Spring Rolls')">View Recipe</button><button><a href="https://youtu.be/34LxJ9XwKts?si=KRhnf9fuhYLQBRg9" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <footer>
+        <p>&copy; 2025 TastyBite. All rights reserved.</p>
+    </footer>
+    <script>
+        // View recipe (redirects to detail page)
+        function viewRecipe(title) {
+            window.location.href = `recipe-detail.html?title=${encodeURIComponent(title)}`;
+        }
+        // Favorite buttons
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Added to favorites!');
+            });
+        });
+    </script>
+</body>
+</html>

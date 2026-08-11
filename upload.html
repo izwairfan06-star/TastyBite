@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyBite - Upload Recipe</title>
+    <style>
+        /* Same CSS as before */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        header { background: #e74c3c; color: white; padding: 1rem; text-align: center; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        nav h1 { font-size: 2rem; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 1rem; }
+        nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+        nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+        .upload-form { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); margin: 2rem 0; }
+        .upload-form input, .upload-form textarea, .upload-form button { width: 100%; margin-bottom: 1rem; padding: 0.5rem; }
+        .upload-form button { background: #e74c3c; color: white; border: none; cursor: pointer; }
+        .upload-form button:hover { background: #c0392b; }
+        footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+        @media (max-width: 768px) { nav { flex-direction: column; } nav ul { margin-top: 1rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <nav >
+            <h1>TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="upload-form">
+            <h2>Upload Your Recipe</h2>
+            <form id="recipe-form">
+                <input type="text" id="recipe-title" placeholder="Recipe Title" required>
+                <textarea id="recipe-description" placeholder="Description and Instructions" rows="5" required></textarea>
+                <input type="file" id="recipe-image" accept="image/*" required>
+                <button type="submit">Upload Recipe</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TastyBite. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('recipe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('recipe-title').value;
+            const desc = document.getElementById('recipe-description').value;
+            const image = document.getElementById('recipe-image').files[0];
+            if (title && desc && image) {
+                alert(`Recipe "${title}" uploaded successfully!`);
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>

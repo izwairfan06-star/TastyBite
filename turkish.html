@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkish Foods</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+     footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+      nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav h1 { font-size: 2rem; }
+    nav ul { list-style: none; display: flex; }        nav ul li { margin-left: 1rem; }
+    nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+    nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .actions{
+        padding: 1rem; display: flex; justify-content: space-between; 
+    }
+    .actions button{
+        background: #e74c3c; color: white; border: none; padding: 0.5rem; cursor: pointer; border-radius: 4px; }
+    .actions button:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <header style="background: #e74c3c; color: white;  text-align: center; padding: 1rem; height: 80px; width: 1300px;">
+        <nav>
+            <h1 style="font-size: 2rem;">TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <nav style="background-color: #de2915; margin-top: 15px; height: 50px; justify-content: space-evenly; align-items: center; ">
+            <ul>
+                <li><a href="fastfood.html">Fast Foods</a></li>
+                <li><a href="Traditional.html">Traditional Foods</a></li>
+                <li><a href="Streetfood.html">Street Foods</a></li>
+                <li><a href="Appetizer.html">Appitizers</a></li>
+                <li><a href="chineese.html">Chineese</a></li>
+                <li><a href="turkish.html">Turkish Foods</a></li>
+                <li><a href="desserts.html">Desserts</a></li>
+                <li><a href="beverages.html">Beverages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="index" style="display: flex; justify-content: space-between; padding-top: 6%;">
+        <p><b style="font-size: larger; text-decoration: underline;">Turkish Foods:</b>Turkish cuisine is a magnificent tapestry woven from centuries of cultural exchange, blending the nomadic traditions of Central Asia with the sophisticated palace kitchens of the Ottoman Empire#FoodieParadise#HappyRecipes#FoodLoversDelight<br><br><b style="text-decoration: underline;">Contact:</b> +92 309566755 / +92 333 4445557<br><br><b style="text-decoration: underline;">Email:</b>  tastybite123@gamil.com / TastyBites098@gmail.com <br><br><b style="text-decoration: underline;">Link:</b> https://www.tastybite.com</p>
+        <br>
+        <img src="turkish.jpg" style="margin: 0%; height: 300px; width: 1000px;">
+    </div>
+    <h2>Turkish Foods Recipes:</h2>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--1. Lahmacun-->
+        <div style="height: 400px; width: 400px;"><h3>Lahmacun</h3><div style="background-image: url('lahmacun.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Lahmacun')">View Recipe</button><button><a href="https://youtu.be/AXbqa8ROTvI?si=wX19-KxUFWTi7HIW" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--2.	Baklawa-->
+        <div style="height: 400px; width: 400px;"><h3>Baklawa</h3><div style="background-image: url('baklawa.jpg'); height: 300px; width: 300px; background-size: cover; "></div> <div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Baklawa')">View Recipe</button><button><a href="https://youtu.be/8IIjVmMf5Nw?si=_0PR5Z6OxV0MjQuQ" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--3.Menemen-->
+        <div style="height: 400px; width: 400px;"><h3>Menemen</h3><div style="background-image: url('menemen.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Menemen')">View Recipe</button><button><a href="https://youtu.be/7NlQJ_FHSG8?si=SR__0mMgQxw8Zwjv" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--4. Turkish Pide-->
+        <div style="height: 400px; width: 400px;"><h3>Turkish Pide</h3><div style="background-image: url('turkish_pide.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Turkish Pide')">View Recipe</button><button><a href="https://youtu.be/_ZdeCtNxfJE?si=muAt7gIIiK5rZSzS" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--5. Dolma-->
+        <div style="height: 400px; width: 400px;"><h3>Dolma</h3><div style="background-image: url('dolma.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Dolma')">View Recipe</button><button><a href="https://youtu.be/Al7Q1phtaoA?si=uuxL-FFNd-VroFTP" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--6. Mercimek Corbasi-->
+        <div style="height: 400px; width: 400px;"><h3>Mercimek Corbasi</h3><div style="background-image: url('mercimek_corbasi.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Mercimek Corbasi')">View Recipe</button><button><a href="https://youtu.be/RoLI0D5zyXQ?si=rCaSH9Agre49x3Un" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--7. Kunefe-->
+        <div style="height: 400px; width: 400px;"><h3>Kunefe </h3><div style="background-image: url('kunefe.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Kunefe')">View Recipe</button><button><a href="https://youtu.be/3ls1czGUgAw?si=LlEstJaZoEl5mu0c" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--8. Gozleme-->
+        <div style="height: 400px; width: 400px;"><h3>Gozleme</h3><div style="background-image: url('gozleme.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Gozleme')">View Recipe</button><button><a href="https://youtu.be/f5WGsIFELtU?si=gQ7rEkSH9g3IZKWf" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <footer>
+        <p>&copy; 2025 TastyBite. All rights reserved.</p>
+    </footer>
+    <script>
+        // View recipe (redirects to detail page)
+        function viewRecipe(title) {
+            window.location.href = `recipe-detail.html?title=${encodeURIComponent(title)}`;
+        }
+        // Favorite buttons
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Added to favorites!');
+            });
+        });
+    </script>
+</body>
+</html>

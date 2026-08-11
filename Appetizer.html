@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appetizer's</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+     footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+      nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav h1 { font-size: 2rem; }
+    nav ul { list-style: none; display: flex; }        nav ul li { margin-left: 1rem; }
+    nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+    nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .actions{
+        padding: 1rem; display: flex; justify-content: space-between; 
+    }
+    .actions button{
+        background: #e74c3c; color: white; border: none; padding: 0.5rem; cursor: pointer; border-radius: 4px; }
+    .actions button:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <header style="background: #e74c3c; color: white;  text-align: center; padding: 1rem; height: 80px; width: 1300px;">
+        <nav>
+            <h1 style="font-size: 2rem;">TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <nav style="background-color: #de2915; margin-top: 15px; height: 50px; justify-content: space-evenly; align-items: center; ">
+            <ul>
+                <li><a href="fastfood.html">Fast Foods</a></li>
+                <li><a href="Traditional.html">Traditional Foods</a></li>
+                <li><a href="Streetfood.html">Street Foods</a></li>
+                <li><a href="Appetizer.html">Appitizers</a></li>
+                <li><a href="chineese.html">Chineese</a></li>
+                <li><a href="turkish.html">Turkish Foods</a></li>
+                <li><a href="desserts.html">Desserts</a></li>
+                <li><a href="beverages.html">Beverages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="index" style="display: flex; justify-content: space-between; padding-top: 6%;">
+        <p><b style="font-size: larger; text-decoration: underline;">Appetizer's:</b>Appetizers are the quiet handshake before the feast—small, confident, and full of promise.Good meals start with anticipation. Great meals start with appetizers #FoodieParadise#HappyRecipes#FoodLoversDelight<br><br><b style="text-decoration: underline;">Contact:</b> +92 309566755 / +92 333 4445557<br><br><b style="text-decoration: underline;">Email:</b>  tastybite123@gamil.com / TastyBites098@gmail.com <br><br><b style="text-decoration: underline;">Link:</b> https://www.tastybite.com</p>
+        <br>
+        <img src="appetizer.html.jpg" style="margin: 0%; height: 300px; width: 1000px;">
+    </div>
+    <h2>Appetizer's Recipes:</h2>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--1. Cucumber Bites with Cream Cheese-->
+        <div style="height: 400px; width: 400px;"><h3>Cucumber Bites with Cream Cheese</h3><div style="background-image: url('cucumberbytes.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Cucumber Bites with Cream Cheese')">View Recipe</button><button><a href="https://youtu.be/xCvdiWGkP9Y?si=gW3kWPV3TLPCBX1O" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--2.	Shrimp Cocktail-->
+        <div style="height: 400px; width: 400px;"><h3>Shrimp Cocktail</h3><div style="background-image: url('Shrimpcocktail.jpg'); height: 300px; width: 300px; background-size: cover; "></div> <div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Shrimp Cocktail')">View Recipe</button><button><a href="https://youtu.be/Kp9uOVrGflo?si=VIKokhdsWzK10j4b" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--3. Spring Rolls-->
+        <div style="height: 400px; width: 400px;"><h3>Spring Rolls</h3><div style="background-image: url('Spring\ Rolls\ .jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Spring Rolls')">View Recipe</button><button><a href="https://youtu.be/M328g44dEtE?si=xNUrb166yQJUt-2g" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--4. Stuffed Mushrooms-->
+        <div style="height: 400px; width: 400px;"><h3>Stuffed Mushrooms</h3><div style="background-image: url('stuffed_mushrooms.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Stuffed Mushrooms')">View Recipe</button><button><a href="https://youtu.be/Wfvad1v155c?si=MvwMZjwczEQ_wTsJ" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--5. Meatballs-->
+        <div style="height: 400px; width: 400px;"><h3>Meatballs</h3><div style="background-image: url('meatballs.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Meatballs')">View Recipe</button><button><a href="https://youtu.be/WzNVw9VWPrU?si=IiL2X1Ud0mTGPIjR" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--6. Sliders-->
+        <div style="height: 400px; width: 400px;"><h3>Sliders</h3><div style="background-image: url('sliders.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Sliders')">View Recipe</button><button><a href="https://youtu.be/c9UY-tnLgKM?si=xzb3c0GJJWYzrBov" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--7. Nachos-->
+        <div style="height: 400px; width: 400px;"><h3>Nachos </h3><div style="background-image: url('nachos.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Nachos')">View Recipe</button><button><a href="https://youtu.be/VTymqMhCwnk?si=X7EgQltDTtTnsrUm" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--8.Mini Quiches-->
+        <div style="height: 400px; width: 400px;"><h3>Mini Quiches</h3><div style="background-image: url('mini_quiches.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Mini Quiches')">View Recipe</button><button><a href="https://youtu.be/fDxnjaVCV68?si=W4bpYGyqWBhaOSjD" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <footer>
+        <p>&copy; 2025 TastyBite. All rights reserved.</p>
+    </footer>
+    <script>
+        // View recipe (redirects to detail page)
+        function viewRecipe(title) {
+            window.location.href = `recipe-detail.html?title=${encodeURIComponent(title)}`;
+        }
+        // Favorite buttons
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Added to favorites!');
+            });
+        });
+    </script>
+</body>
+</html>

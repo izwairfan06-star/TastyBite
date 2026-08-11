@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipe-detail</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+     footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+      nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav h1 { font-size: 2rem; }
+    nav ul { list-style: none; display: flex; }        nav ul li { margin-left: 1rem; }
+    nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+    nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .actions{
+        padding: 1rem; display: flex; justify-content: space-between; 
+    }
+    .actions button{
+        background: #e74c3c; color: white; border: none; padding: 0.5rem; cursor: pointer; border-radius: 4px; }
+    .actions button:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <header style="background: #e74c3c; color: white;  text-align: center; padding: 1rem; height: 80px; width: 1300px;">
+        <nav>
+            <h1 style="font-size: 2rem;">TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <nav style="background-color: #de2915; margin-top: 15px; height: 50px; justify-content: space-evenly; align-items: center; ">
+            <ul>
+                <li><a href="fastfood.html">Fast Foods</a></li>
+                <li><a href="traditional.html">Traditional Foods</a></li>
+                <li><a href="Streetfood.html">Street Foods</a></li>
+                <li><a href="Appetizer.html">Appitizers</a></li>
+                <li><a href="chineese.html">Chineese</a></li>
+                <li><a href="turkish.html">Turkish Foods</a></li>
+                <li><a href="desserts.html">Desserts</a></li>
+                <li><a href="beverages.html">Beverages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container" style="margin-top: 55px;">
+        <div class="recipe-detail" id="recipe-detail">
+            <!-- Content will be populated by JS based on URL param -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 TastyBite. All rights reserved.</p>
+    </footer>
+    <script>
+        // Get recipe title from URL (e.g., ?title=Spaghetti%20Carbonara)
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title');
+        // Mock recipe data (in a real app, fetch from backend)
+        const recipes = {
+            //1. Fast Foods
+// Chicken Wraps
+'Chicken Wraps': {
+    img: 'chicken wrap.jpg',
+    desc: 'Spicy marinated chicken wraps with fresh veggies and sauce. <br><b>Instructions:</b> Marinate chicken with yogurt and spices, cook until done, assemble in tortillas with lettuce, onions, tomatoes, bell peppers, and red chilli sauce, then roll and optionally toast.<br><b>Ingredients:</b> Chicken boneless 1&1/2 kg, Yogurt 1/2 Cup,Salt 1&1/2 tsp or to taste,Red Chilli powder 1 tbsp,Cumin powder 1 tsp,Turmeric powder 1 tsp ,coriander powder 1 tbsp ,Red Chilli flakes 1 tsp ,paprika powder 1 tbsp ,garlic powder 1 tsp ,ginger powder 1 tsp ,lemon juice 1-2 tbsp ,olive oil 1-2 tbsp,food colour 1 pinch (optional),tortilla ,lettuce ,onion ,slices ,Tomato Slices ,Bell pepper,red Chilli Sauce <br><b>Recipe: </b>To make delicious chicken wraps, take 1½ kg boneless chicken and mix it with ½ cup yogurt, 1½ teaspoons salt, 1 tablespoon red chilli powder, 1 teaspoon cumin powder, 1 teaspoon turmeric, 1 tablespoon coriander powder, 1 teaspoon red chilli flakes, 1 tablespoon paprika, 1 teaspoon garlic powder, 1 teaspoon ginger powder, 1–2 tablespoons lemon juice, 1–2 tablespoons olive oil, and a small pinch of food colour if you like. Marinate the chicken well and let it rest for at least an hour. Cook the marinated chicken in a pan on medium heat until it becomes tender, the water dries up, and the masala turns slightly roasted. Once cooked, slice or shred the chicken. Prepare the wrap by warming your tortillas and adding fresh lettuce, thin onion slices, tomato slices, and bell pepper strips. Place the cooked chicken on top and drizzle red chilli sauce to taste. Roll the tortilla tightly into a wrap, and you can lightly toast it on a pan for a crispy finish.<br><b>YouTube Link:</b>',
+    nutrition: 'Calories: 450 | Protein: 35g | Carbs: 40g <br>'
+            },
+//Spicy Wings
+'Spicy Wings': {
+    img: 'spicywings.jpg',
+    desc: `Crispy fried chicken wings coated in a spicy homemade BBQ sauce. <br><b>Instructions:</b> Marinate wings with spices, coat in seasoned flour, deep fry until crispy, then toss in spicy BBQ sauce.<br><b>Ingredients:</b> Chicken wings with skin 750g,Red chilli powder 1 tsp or to taste,Salt 1 tsp or to taste,Paprika powder 1 tsp,Ginger garlic paste 1/2 tbsp,All-purpose flour 1 & 1/2 cup,Red chilli powder 1 tsp,Salt 1/2 tsp,Cooking oil for frying.<br><b>Spicy BBQ Sauce:</b>Hot sauce 5 tbsp,Tomato ketchup 4 tbsp,Brown sugar (powdered) 2 tbsp,Salt 1/4 tsp,Paprika powder 1 tsp,Red chilli crushed 1 tsp,Soy sauce 2 tbsp,Vinegar 1 & 1/2 tbsp.<br><b>Recipe:</b>In a bowl, add chicken wings, red chilli powder, salt, paprika, and ginger garlic paste. Mix well and marinate for 15 minutes.In a dish, combine flour, red chilli powder, and salt.Coat marinated wings thoroughly in the flour mixture.Heat oil in a wok and deep fry wings on medium-low flame until golden and crispy.<br><b>Prepare Spicy BBQ Sauce:</b>In a wok, add hot sauce, ketchup, brown sugar, salt, paprika, crushed chilli, soy sauce, and vinegar. Mix well.Turn on the flame and cook for one minute.Add fried wings, toss well, cook another minute, and serve hot!`,
+    nutrition: 'Calories: 380 | Protein: 28g | Carbs: 18g <br>'},
+//Crispy Chicken Burger
+'Crispy Chicken Burger': {
+    img: 'crispychickenburger.jpg',
+    desc: `Crispy, juicy fried chicken thigh fillet served in a soft burger bun with flavorful sauce, cheese, and jalapeños. <br><b>Instructions:</b> Brine chicken, coat in seasoned flour, fry until crispy, prepare sauce & spice mix, then assemble burger with lettuce, cheese, and jalapeños.<br><b>Ingredients:</b> Chicken thigh pieces (deboned) 1/2 kg,Water 3 cups,Salt 1 & 1/2 tsp,Vinegar 2–3 tbsp,All-purpose flour (sifted) 3 cups,Chicken powder 1 & 1/2 tbsp,Garlic powder 1 tsp,Red chilli powder 1 tsp (or to taste),Water 1 & 1/2 cup (for dipping),Cooking oil for frying,<br><b>Burger Sauce:</b>Mayonnaise 1/2 cup,Hot sauce 2 tbsp,Tomato ketchup 2 tbsp,Mustard paste 1 & 1/2 tsp,Salt (a pinch),<br><b>Spice Mix:</b>Chicken powder 1/2 tbsp,Paprika powder 1 tsp,Salt 1/4 tsp,Black pepper powder 1 tsp,Onion powder 1 & 1/2 tsp,Cumin powder 1 tsp,Red chilli powder 1/2 tbsp,Garlic powder 1 & 1/2 tsp,<br><b>Assembling:</b>Burger bun,Mayonnaise,Iceberg lettuce,Cheese slice,Jalapeño slices.<br><b>Recipe:</b>Pound chicken thighs using a meat mallet. In a bowl, add chicken, water, salt, vinegar, and mix. Cover and let rest for 2–3 hours. In a bowl, mix flour, chicken powder, garlic powder, and red chilli powder. Fill another bowl with water. Coat marinated chicken in the dry flour, then dip into water, then back into flour for a double coat. Heat oil and fry chicken on low flame for 7–8 minutes until golden and crispy.<br><b>Prepare Burger Sauce:</b> Mix mayo, hot sauce, ketchup, mustard, and salt.<br><b>Prepare Spice Mix:</b>Combine chicken powder, paprika, salt, black pepper, onion powder, cumin powder, red chilli powder, and garlic powder. Shake well.<br><b>Assembling:</b>Sprinkle spice mix on both sides of fried chicken. Spread mayo on bun, add lettuce (iceberg), crispy chicken, cheese slice, more lettuce, jalapeños, and burger sauce. Close with top bun and serve with chips & ketchup.<br>`,
+    nutrition: 'Calories: 520 | Protein: 32g | Carbs: 45g <br>'},
+//Nuggets
+'Nuggets': {
+    img: 'nuggets.jpg',
+    desc: `Crispy double-coated chicken strips made with a flavorful marinade and a crunchy bread crumb mixture.<br><b>Instructions:</b> Marinate chicken pieces, prepare fresh + ready bread crumbs, coat using egg wash, and fry until golden and crispy.<br><b>Ingredients:</b>Boneless chicken breast 500g,White bread slices 4,Ginger paste 1/2 tbsp,Garlic paste 1/2 tbsp,Soy sauce 1 tbsp,White pepper powder 1/2 tsp,Paprika powder 1/2 tsp,Salt 1 tsp,Egg 1,Milk 1 tbsp,Salt and pepper (for egg wash),Bread crumbs 1 cup,Oil for frying.<br><b>Recipe:</b><b>Prepare Chicken:</b>Cut chicken breast into strips. Add ginger paste, garlic paste, soy sauce, white pepper, paprika, and salt. Mix well and marinate for 20–30 minutes.<br><b>Prepare the Coating:</b>Grind 4 slices of white bread to make fresh crumbs (or toast lightly and crush). Mix these fresh crumbs with 1 cup ready-made bread crumbs and keep aside.<b>Prepare Egg Wash:</b>Whisk egg, milk, salt, and pepper.<b>Coat the Chicken:</b>Dip each marinated chicken strip into egg wash, then roll in bread crumb mixture. Press to make coating stick. For extra crispiness, repeat coating twice.<br><b>Fry:</b>Heat oil on medium flame. Fry coated chicken strips for 5–7 minutes until golden, crispy, and fully cooked.`,
+    nutrition: 'Calories: 300 | Protein: 27g | Carbs: 18g <br>'},
+//Pizza
+'Pizza': { 
+    img: 'pizza.jpg',
+    desc: `Homemade chicken pizza with a soft, fluffy crust, topped with juicy chicken chunks, cheese, and your favorite vegetables.<br><b>Instructions:</b> Prepare dough, cook spiced chicken chunks, assemble with sauce, cheese, and vegetables, then bake until golden and bubbly.<br><b>Ingredients:</b><br><b>For Dough:</b>Sugar 1 tsp,Instant dry yeast 1 tsp,Lukewarm water 1 cup,Flour 2 1/2 cups (275g) plus 1/2 cup (50g),Salt 1 tsp,Dry milk powder 2 tbsp,Olive oil or vegetable oil 1 tbsp,<br><b>For Chicken Chunks:</b>Boneless chicken 250g (cubed),Red chili powder 1 tsp,Salt 1 tsp,Black pepper 1 tsp,Ginger garlic paste/powder 1 tbsp,Vinegar or lemon juice 1 tbsp,Oil 1 tbsp,<br><b>For Toppings:</b>Pizza sauce 2 tbsp,Chicken chunks,Mozzarella or pizza cheese 1 cup,Vegetables of your choice,Oregano and oil for sprinkling,<br><b>Recipe:</b><b>Make Dough:</b>Mix lukewarm water, sugar, and yeast. Rest 5 minutes. Add flour, salt, dry milk powder, and oil. Knead into soft dough, cover, and let rise 1 hour.<b>Prepare Chicken Chunks:</b>Mix chicken with red chili, salt, black pepper, ginger garlic, vinegar/lemon, and oil. Cook until chicken is soft and dry.<b>Shape Pizza:</b>Punch dough, roll into a round base, and brush lightly with oil.<b>Add Toppings:</b>Spread pizza sauce, add cooked chicken, vegetables, cheese, and sprinkle oregano.<b>Bake:</b>Bake in preheated oven at 220°C (430°F) for 12–15 minutes or until cheese melts and crust is golden.`,
+    nutrition: 'Calories: 480 | Protein: 30g | Carbs: 50g | Fat: 18g <br>'},
+//Sandwich
+'Sandwich': {
+    img: 'sandwich.jpg',
+    desc: `Grilled chicken sandwich with shredded chicken, creamy sauce, and fresh veggies, perfectly golden and crispy.<br><b>Instructions:</b> Boil chicken, shred and mix with sauces and veggies, assemble on bread, butter, and grill until golden.<br><b>Ingredients:</b>Water 2 cups (or as required),Himalayan pink salt 1 tsp (or to taste),Black peppercorns 1/2 tsp,Bay leaf 1,Chicken 350g,Tomato ketchup 1/4 cup,Mayonnaise 1/4 cup,Mustard paste 3 tbsp,Onion (chopped) 1/4 cup,Capsicum (chopped) 1/4 cup,Jalapeños (chopped) 2 tbsp (optional),Black pepper powder 1/2 tsp,Bread slices,Cheese slices,Butter (melted).<br><b>Recipe:</b>Boil water in a saucepan. Add salt, black peppercorns, bay leaf, and chicken fillet. Cover and cook on low flame for 15–20 minutes. Remove chicken, let it rest, then flatten with a rolling pin and shred with a fork.In a bowl, mix shredded chicken with tomato ketchup, mayonnaise, mustard paste, onion, capsicum, jalapeños, and black pepper powder. Add optional veggies like corn, cucumber, or olives.Spread the chicken mixture on a bread slice, add a cheese slice, cover with another bread slice, and brush melted butter on top. Heat a cast-iron pan, place sandwich upside down, apply butter on the other side, and grill both sides until golden and crispy. Makes about 6 sandwiches.Cut into pieces and serve with potato fries.`,
+    nutrition: 'Calories: 420 | Protein: 28g | Carbs: 35g | Fat: 18g <br>'},
+//Shawarma
+'Shawarma': {
+    img: 'shawarma.jpg',
+    desc: `Spicy and creamy chicken shawarma wrapped in pita, roti, or tortilla with red and white sauces.<br><b>Instructions:</b> Marinate chicken, cook until tender, prepare red and white sauces, assemble with optional veggies, and roll tightly.<br><b>Ingredients:</b>Chicken boneless 500g,Salt 1/2 tsp,Red chili flakes soaked in vinegar 1/2 tsp,Garlic powder 1/2 tsp,Tikka masala 1 tsp,Yoghurt 1 tsp,Cream 2 tbsp,<br><b>Red Sauce:</b>Red chili flakes 2 tbsp,White vinegar to soak chili,Salt 1/4 tsp,<br><b>White Sauce:</b>Egg 1,Salt (pinch),Black pepper (pinch),Garlic 1 clove,Oil 1 cup,<br><b>Recipe:</b>Marinate chicken with salt, soaked red chili flakes, garlic powder, tikka masala, yoghurt, and cream. Rest 20–30 minutes. Cook in a pan with 1–2 tbsp oil until fully cooked and slightly roasted. Slice or shred.For red sauce: soak 2 tbsp red chili flakes in vinegar, add 1/4 tsp salt, and blend into a smooth paste.For white sauce: blend egg, salt, black pepper, garlic, and oil slowly until thick like mayonnaise.Warm pita/roti/tortilla. Spread white sauce first, then red sauce. Add cooked chicken and optional veggies (onion, cabbage, cucumber). Roll tightly and toast on a pan 1–2 minutes.`,
+    nutrition: 'Calories: 400 |  Protein: 35g | Carbs: 35g | Fat: 15g <br>'},
+//Mozzarella Sticks
+'Mozzarella Sticks': {
+    img: 'morzilla.jpg',
+    desc: `Crispy golden mozzarella sticks with a seasoned breadcrumb coating, perfect as a snack or appetizer.<br><b>Instructions:</b> Freeze cheese sticks, coat with flour, egg, and seasoned breadcrumbs, double dip for extra crispiness, then fry until golden.<br><b>Ingredients:</b>Mozzarella block 1 lb (cut into 1/2" x 1/2" sticks),Eggs 2,Milk 1/4 cup,All-purpose flour 1/2 cup,Breadcrumbs 1 1/2 cups,Italian seasoning 1 tsp,Granulated garlic 1 tsp,Granulated onion 1 tsp,Salt and pepper to taste,Vegetable oil or light olive oil for frying.<br><b>Recipe:</b>Freeze mozzarella sticks for 20–30 minutes. Prepare three bowls: flour, egg + milk whisked, breadcrumbs + Italian seasoning + garlic + onion + salt + pepper. Coat each stick in flour, dip in egg, roll in breadcrumbs. Repeat egg + breadcrumb for extra coating. Freeze coated sticks for 15–20 minutes.Heat oil to 350°F (175°C). Fry sticks for 1–2 minutes until golden. Drain on paper towels. Serve hot with your favorite dip.`,
+    nutrition: 'Calories: 280 | Protein: 15g | Carbs: 20g | Fat: 18g <br>'
+},
+//2.Traditional foods
+//Biryani
+'Biryani': {
+    img: 'biryani.jpg',
+    desc: `A classic, aromatic chicken biryani made with layered basmati rice, spiced chicken masala, fried onions, and fresh herbs.
+    <br><b>Ingredients:</b>
+           Chicken 1–1.5 kg (cut into pieces),
+           Basmati rice 500–600 g (~3 cups),
+           Onions 2–3 medium (thinly sliced),
+           Tomatoes 2 medium (chopped),
+           Yogurt 1/2 cup (200 ml),
+           Ginger-garlic paste 2–3 tbsp,
+           Green chilies 2–4,
+           Fresh coriander & mint handful each,       
+           <br><b>Spices:</b>
+           Salt to taste,
+           Red chili powder 1–2 tsp,
+           Turmeric 1/2 tsp,
+           Garam masala 1–2 tsp,
+           Cumin powder 1 tsp,
+           Coriander powder 1 tsp,
+           Whole spices (optional): bay leaf, cinnamon, cloves, cardamom,
+           Ghee or oil as needed,
+           Water for cooking.
+           <br><b>Recipe:</b>
+           Marinate chicken with yogurt, ginger-garlic paste, salt, and spices; rest 20–30 minutes.
+           Fry thinly sliced onions until golden; set aside.
+           In the same pot, cook tomatoes, remaining onions, spices, and marinated chicken until partially cooked.
+           Parboil basmati rice (70–80% done) with salt and whole spices; drain.
+           <br><b>Layering:</b>
+           In a large pot, add a layer of chicken, then a layer of rice. 
+           Sprinkle fried onions, chopped coriander, mint, and a drizzle of ghee. 
+           Repeat layers if needed.
+           Cover tightly and cook on low flame for 20–30 minutes (dum).
+           Rest a few minutes, fluff gently, and serve with raita or salad.`,
+           nutrition:'Calories: ~700 | Protein: 40g | Carbs: 70g | Fat: 25g <br>`'
+},
+//Nihari
+'Nihari': {
+    img: 'Nihari.jpg',
+    desc: `A rich, aromatic chicken nihari with slow-cooked gravy and tender chicken, garnished with fresh herbs and ginger.
+           <br><b>Instructions:</b> Sear onions & spices, cook chicken with spices, simmer with water, thicken with flour slurry, and garnish before serving.
+           
+           <br><b>Ingredients:</b>
+           Chicken 1.2 kg (bone-in or boneless),
+           Oil or ghee 1/4 cup (for frying),
+           Onions 2 large, thinly sliced,
+           Ginger-garlic paste 1.5 tbsp,
+           Salt to taste,
+           Ground spices (turmeric, red chili powder, coriander powder, cumin powder, black pepper, garam masala),
+           Whole spices (bay leaf, cinnamon, cardamom, cloves - optional),
+           Water 6–8 cups,
+           Flour (whole wheat or plain) for slurry,
+           Fresh garnish: chopped coriander, julienned ginger, green chilies, lemon wedges.
+           
+           <br><b>Recipe:</b>
+           <ol>
+               <li><b>Sear onions & spices:</b> Heat oil/ghee in a heavy pot, add whole spices (if using), then add sliced onions. Fry until golden brown.</li>
+               <li><b>Add ginger-garlic & chicken:</b> Stir briefly, add chicken pieces, brown lightly.</li>
+               <li><b>Add ground spices & salt:</b> Sprinkle ground spices and salt. Stir for 1 minute.</li>
+               <li><b>Add water & simmer:</b> Pour water to cover chicken. Bring to boil, then simmer on low heat for 40–50 min until chicken is tender.</li>
+               <li><b>Thicken gravy:</b> Prepare flour slurry (flour + cold water). Stir into simmering gravy and cook 5–10 min until thickened and oil/fat surfaces.</li>
+               <li><b>Garnish & serve:</b> Top with chopped coriander, julienned ginger, green chilies, and lemon wedges. Serve hot with naan, roti, or sheermal.</li>
+           </ol>`,
+    nutrition: `Calories: 650 kcal | Protein: 45g | Carbs: 25g | Fat: 35g | Fiber: 3g | Sodium: ~900mg | Cholesterol: ~120mg <br>`
+},
+//Haleem
+'Haleem': {
+    img: 'haleem.jpg',
+    desc: `A rich and hearty Degi Haleem made with slow-cooked meat, grains, and lentils, blended into a smooth, flavorful porridge.
+           <br><b>Instructions:</b> Cook meat with onions, ginger-garlic, and spices; add grains and lentils; simmer until soft; mash to a smooth consistency; garnish before serving.
+           <br><b>Ingredients:</b>
+           Meat (beef/mutton/chicken) 1 kg,
+           Wheat/barley 250–300 g,
+           Lentils (optional) 100 g,
+           Onions 2 large (thinly sliced),
+           Ginger-garlic paste 2 tbsp,
+           Whole spices: bay leaf, cinnamon stick, cloves, cardamom,
+           Ground spices: salt, red chili powder, turmeric, coriander powder, cumin powder, garam masala,
+           Ghee or oil 1/4 cup,
+           Water/stock 8–10 cups,
+           Fresh garnish: fried onions, chopped coriander, lemon wedges, green chilies, ginger julienne.
+           
+           <br><b>Recipe:</b>
+           <ol>
+               <li>Wash and soak grains/lentils if needed.</li>
+               <li>Heat ghee/oil, fry whole spices and onions until golden.</li>
+               <li>Add ginger-garlic paste, then meat, and brown lightly.</li>
+               <li>Add water/stock, bring to boil, then simmer until meat is tender.</li>
+               <li>Add grains and lentils, continue simmering until grains soften.</li>
+               <li>Add ground spices, mix well, and continue cooking until porridge-like consistency.</li>
+               <li>Mash or blend to achieve smooth/semi-smooth consistency.</li>
+               <li>Adjust thickness, add ghee if desired.</li>
+               <li>Serve hot, garnished with fried onions, coriander, lemon wedges, chilies, and julienned ginger.</li>
+           </ol>`,
+    nutrition: `Calories: 600 kcal | Protein: 45g | Carbs: 55g | Fat: 25g | Fiber: 5g <br>`
+},
+'Chapli Kabab': {
+    img: 'Chaplikabab.jpg',
+    desc: `Spiced and flattened patties made with minced meat, richly flavoured and fried until crispy — a classic chapli kabab.
+           <br><b>Instructions:</b> Combine ground meat with spices, herbs, and binding ingredients, form patties, and fry until cooked through and crisp.
+           
+           <br><b>Ingredients:</b>
+           Minced meat 500g,
+           Onion 1 medium (finely chopped),
+           Tomato 1 (finely chopped),
+           Green chilies 2–3 (finely chopped),
+           Ginger-garlic paste 1 tbsp,
+           Fresh coriander handful (chopped),
+           Fresh mint few leaves (chopped),
+           
+           <br><b>Ground spices:</b>
+           Salt to taste,
+           Red chili powder 1 tsp (or to taste),
+           Coriander powder 1 tsp,
+           Cumin powder 1 tsp,
+           Garam masala 1/2 tsp,
+           Black pepper 1/2 tsp,
+           
+           <br><b>Binding (optional):</b>
+           Gram flour 2–3 tbsp,
+           Egg 1,
+           
+           <br><b>Oil:</b> for frying,
+           
+           <br><b>Recipe:</b>
+           <ol>
+               <li>In a bowl, combine minced meat, onion, tomato, green chilies, ginger-garlic paste, coriander & mint.</li>
+               <li>Add ground spices: salt, red chili powder, coriander powder, cumin powder, garam masala, black pepper. Mix well.</li>
+               <li>If mixture is too soft, add gram flour and/or egg to bind.</li>
+               <li>Divide mixture into small balls, flatten into 1/2-inch thick patties.</li>
+               <li>Heat oil in a pan and fry patties on medium heat until golden brown and cooked through (4–5 minutes per side).</li>
+               <li>Drain on paper towels and serve hot with chutney, naan/roti, or salad.</li>
+           </ol>`,
+    nutrition: `Calories: 320 kcal | Protein: 25g | Carbs: 6g | Fat: 20g | Salt: depends on seasoning <br>`
+},
+//Chicken Karahi
+'Chicken Karahi': {
+    img: 'Chicken\ karahi.jpg',
+    desc: `Spicy and flavorful Chicken Karahi cooked with fresh tomatoes, onions, and a blend of desi spices — perfect with naan or roti.
+           <br><b>Instructions:</b> Sear chicken with spices, cook with tomato-onion masala, simmer until gravy thickens and oil separates. Garnish with fresh coriander and green chilies.
+           
+           <br><b>Ingredients:</b>
+           Chicken 1 kg (bone-in or boneless, cut into pieces),
+           Oil or ghee 1/2 cup,
+           Onions 2 medium (thinly sliced),
+           Tomatoes 3–4 medium (chopped or pureed),
+           Ginger-garlic paste 1 tbsp,
+           Green chilies 2–4 (slit or chopped, optional),
+           Salt to taste,
+           Red chili powder 1–2 tsp,
+           Turmeric powder 1/2 tsp,
+           Coriander powder 1 tsp,
+           Cumin powder 1 tsp,
+           Garam masala 1/2 tsp (optional),
+           Fresh coriander handful (chopped, for garnish),
+           Fresh ginger thumb-size piece (julienned, optional, for garnish),
+           Water as needed,
+           
+           <br><b>Recipe:</b>
+           <ol>
+               <li>Heat oil/ghee in a karahi or heavy pot.</li>
+               <li>Add sliced onions; sauté until light golden.</li>
+               <li>Add ginger-garlic paste and green chilies; fry 1 minute until fragrant.</li>
+               <li>Add chicken pieces; stir to coat with oil and onion mixture, cook 5–7 min until chicken starts to brown.</li>
+               <li>Add chopped/pureed tomatoes, salt, red chili powder, turmeric, coriander powder, cumin powder. Mix well.</li>
+               <li>Cover and cook on medium heat, stirring occasionally. Add a splash of water if needed to prevent burning. Cook until chicken is nearly done and tomatoes soften.</li>
+               <li>Increase heat to medium-high; cook uncovered until oil separates and gravy thickens.</li>
+               <li>Sprinkle garam masala (if using), stir and cook 1 more minute.</li>
+               <li>Turn off heat and garnish with chopped coriander and julienned ginger. Serve hot with naan, roti, or rice.</li>
+           </ol>`,
+    nutrition: `Calories: 550 kcal | Protein: 40g | Carbs: 12g | Fat: 30g | Sodium: variable <br>`
+},
+//Sajji
+'Sajji': {
+    img: 'sajji.jpg',
+    desc: `Traditional Balochi-style Sajji — whole chicken marinated in simple spices, slow-roasted until tender and juicy. 
+           <br><b>Instructions:</b> Marinate the chicken, stuff with rice (optional), skewer or roast whole, and cook slowly over low heat until golden brown.
+           
+           <br><b>Ingredients:</b>
+           Chicken whole 1 (about 1.2–1.5 kg),
+           Salt 1–2 tsp (to taste),
+           Black pepper 1 tsp,
+           Yogurt 1/2 cup (optional),
+           Garlic paste 1 tbsp,
+           Lemon juice 2 tbsp,
+           Green chilies 2–3 (optional),
+           Oil 2–3 tbsp,
+           Rice 1 cup (optional, for stuffing),
+           Spices for stuffing: cumin powder 1 tsp, coriander powder 1 tsp, turmeric 1/2 tsp,
+           
+           <br><b>Recipe:</b>
+           <ol>
+               <li>Clean the whole chicken thoroughly and pat dry.</li>
+               <li>Prepare marinade: mix salt, black pepper, garlic paste, lemon juice, yogurt (if using), and green chilies.</li>
+               <li>Rub marinade all over the chicken, inside and out. Let it marinate for at least 4–6 hours (overnight preferred).</li>
+               <li>If using, stuff chicken cavity with cooked rice mixed with cumin, coriander, and turmeric.</li>
+               <li>Skewer the chicken or place on a roasting tray.</li>
+               <li>Roast in a preheated oven at 180°C (350°F) for 1–1.5 hours, or cook over low charcoal for traditional flavor, turning occasionally, until golden brown and fully cooked.</li>
+               <li>Serve hot with naan, chutney, or salad.</li>
+           </ol>`,
+    nutrition: `Calories: 650 kcal | Protein: 55g | Carbs: 20g | Fat: 35g | Sodium: variable <br>`
+},
+//Mutton Pulao
+'Mutton Pulao': {
+    img: 'muttonpullao.jpg',
+    desc: `A fragrant and flavorful Mutton Pulao — tender mutton cooked with aromatic spices and basmati rice.  
+           <br><b>Instructions:</b> Sauté spices and mutton, cook until tender, add rice and simmer until fluffy and aromatic.
+           <br><b>Ingredients:</b>
+           Mutton (bone-in) 500g,  
+           Basmati rice 2 cups,  
+           Onion 2 large (thinly sliced),  
+           Garlic paste 1 tbsp,  
+           Ginger paste 1 tbsp,  
+           Green chilies 2–3 (slit),  
+           Yogurt 1/2 cup,  
+           Whole spices: cinnamon 2 sticks, cloves 4–5, cardamom 4–5, bay leaf 2,  
+           Ground spices: cumin powder 1 tsp, coriander powder 1 tsp, turmeric 1/2 tsp, garam masala 1 tsp, red chili powder 1 tsp,  
+           Oil/ghee 4 tbsp,  
+           Salt to taste,  
+           Water 4 cups,  
+           Fresh coriander and mint leaves for garnish,  
+           Lemon juice 1 tbsp (optional),
+           
+           <br><b>Recipe:</b>
+           <ol>
+               <li>Wash and soak basmati rice for 30 minutes.</li>
+               <li>Heat oil/ghee in a heavy-bottomed pot. Add whole spices and sauté until fragrant.</li>
+               <li>Add sliced onions and cook until golden brown.</li>
+               <li>Add ginger and garlic paste, green chilies, and sauté for 2 minutes.</li>
+               <li>Add mutton pieces and sear until browned on all sides.</li>
+               <li>Mix in yogurt, ground spices, and salt. Cook on medium heat until mutton is tender (about 45–60 minutes; can add water as needed).</li>
+               <li>Once mutton is tender, add soaked rice and water. Bring to a boil, then reduce heat, cover, and simmer until rice is cooked and water is absorbed (about 15–20 minutes).</li>
+               <li>Sprinkle garam masala, fresh coriander, and mint leaves. Drizzle lemon juice if desired.</li>
+               <li>Serve hot with raita, salad, or chutney.</li>
+           </ol>`,
+
+    nutrition: `Calories: 550 kcal | Protein: 40g | Carbs: 60g | Fat: 20g | Sodium: variable <br>`
+},
+//Saag with makki ki roti
+'Saag with makki ki roti': {
+    img: 'saag.jpg',
+    desc: `Classic Punjabi-style Sarson ka Saag served with Makki ki Roti — a comforting winter dish made with mustard greens and spices. 
+    <br><b>Instructions:</b> Cook greens until tender, blend partially, temper with spices and ghee, and serve hot with cornmeal flatbreads.         
+    <br><b>Ingredients:</b>
+           <b>For Saag:</b>
+           Mustard greens (Sarson) 500g,
+           Spinach 250g,
+           Bathua (optional) 100g,
+           Onion 1 large, finely chopped,
+           Garlic 4–5 cloves, minced,
+           Ginger 1-inch piece, grated,
+           Green chilies 2–3, chopped,
+           Tomatoes 1–2, chopped,
+           Cornmeal (makki ka atta) 2 tsp (optional, for thickening),
+           Ghee or oil 3 tbsp,
+           Salt to taste,
+           Red chili powder 1 tsp,
+           Turmeric 1/2 tsp,
+           Water as needed,
+
+           <b>For Makki ki Roti:</b>
+           Cornmeal (makki ka atta) 2 cups,
+           Warm water 3/4 cup (approx.),
+           Salt 1 tsp,
+           Ghee for cooking
+
+           <br><b>Recipe:</b>
+           <ol>
+               <li>Wash mustard greens, spinach, and bathua thoroughly. Chop roughly.</li>
+               <li>Boil greens in a large pot with a little water until tender, about 20–25 minutes. Drain and keep some water aside.</li>
+               <li>Blend the greens partially to retain some texture.</li>
+               <li>Heat ghee/oil in a pan, sauté onions until golden, add garlic, ginger, and green chilies, and cook 1–2 minutes.</li>
+               <li>Add chopped tomatoes, turmeric, red chili powder, and salt. Cook until tomatoes soften.</li>
+               <li>Add blended greens and cook on low heat, stirring occasionally. If too thick, add reserved water. Add cornmeal to thicken if desired.</li>
+               <li>Cook for another 10–15 minutes until flavors combine. Adjust seasoning.</li>
+               <li>For Makki ki Roti, mix cornmeal, salt, and warm water into a soft dough. Divide into balls and flatten into round rotis.</li>
+               <li>Cook rotis on a hot griddle (tawa) until golden spots appear on both sides, applying ghee as needed.</li>
+               <li>Serve hot saag with makki ki roti and a dollop of butter or ghee.</li>
+           </ol>`,
+    
+    nutrition: `Calories: 420 kcal | Protein: 12g | Carbs: 55g | Fat: 18g | Sodium: variable <br>`
+},
+// Street food
+//1. Gol Gappay
+'Gol Gappay': {      
+    img: 'golgappay.jpg',      
+    desc: `Crispy Gol Gappay (Pani Puri) — a popular South Asian street snack featuring hollow puris filled with spicy, tangy water, potatoes, chickpeas, and chutneys.      
+           <br><b>Instructions:</b> Prepare puris (or use store-bought), make tangy pani, prepare fillings, and assemble just before serving.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Puris:</b>      
+           Semolina (sooji) 1 cup,      
+           All-purpose flour 2 tbsp,      
+           Salt 1/4 tsp,      
+           Warm water as needed,      
+           Oil for frying,      
+           
+           <br><b>For Pani (spicy water):</b>      
+           Mint leaves 1 cup,      
+           Coriander 1/2 cup,      
+           Green chilies 2–3,      
+           Tamarind pulp 3–4 tbsp,      
+           Roasted cumin powder 1 tsp,      
+           Black salt 1/2 tsp,      
+           Salt to taste,      
+           Cold water 4–5 cups,      
+           
+           <br><b>For Filling:</b>      
+           Boiled potatoes 2 (diced),      
+           Boiled chickpeas 1 cup,      
+           Chaat masala 1 tsp,      
+           Salt 1/2 tsp,      
+           Tamarind chutney 2–3 tbsp (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li><b>Prepare Puris:</b> Mix semolina, flour, and salt. Add warm water and knead into a firm dough. Rest 15 minutes.</li>      
+               <li>Roll out thin, cut small circles, and fry on medium-high heat until puffed and crispy. Set aside.</li>      
+               
+               <li><b>Prepare Pani:</b> Blend mint, coriander, chilies, tamarind, and spices with some water. Strain and mix with remaining cold water.</li>      
+               
+               <li><b>Prepare Filling:</b> Mix boiled potatoes and chickpeas with chaat masala and salt.</li>      
+               
+               <li><b>Assemble:</b> Crack the top of each puri, stuff with potato–chickpea mix, add tamarind chutney (optional), and dip in or pour the spicy pani.</li>      
+               
+               <li>Serve immediately for maximum crispiness.</li>      
+           </ol>`,      
+    nutrition: `Calories: 300–350 kcal per serving | Carbs: 50g | Protein: 6–8g | Fat: 8–12g | Sodium: variable <br>`      
+},
+
+//2. Bun kabab
+'Bun Kabab': {      
+    img: 'bun\ kabab.jpg',      
+    desc: `Classic Pakistani Bun Kabab — a delicious street-style sandwich made with spicy lentil-and-egg patties, soft buns, chutneys, and fresh veggies.      
+           <br><b>Instructions:</b> Prepare kabab mixture, pan-fry patties, assemble buns with chutney, kabab, egg layer, and vegetables.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Kabab:</b>      
+           Chana dal (split chickpeas) 1/2 cup,      
+           Boneless beef or chicken mince 250g (optional; can be vegetarian),      
+           Onion 1 small (chopped),      
+           Ginger garlic paste 1 tbsp,      
+           Green chilies 2,      
+           Red chili powder 1 tsp,      
+           Turmeric 1/2 tsp,      
+           Cumin powder 1 tsp,      
+           Salt 1 tsp (to taste),      
+           Egg 1 (for binding),      
+           
+           <br><b>Additional:</b>      
+           Eggs 2 (fried omelette style),      
+           Buns 4,      
+           Green chutney 3–4 tbsp,      
+           Tamarind chutney 2–3 tbsp,      
+           Onion slices 1/2 cup,      
+           Tomato slices 1–2,      
+           Lettuce or cabbage (optional),      
+           Oil 2–3 tbsp for frying,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Boil chana dal with turmeric and salt until soft but not mushy. Drain well.</li>      
+               <li>In a pot, cook mince with onion, ginger garlic, chilies, and spices until water dries.</li>      
+               <li>Combine mince and dal, grind into a coarse mixture, and mix in one egg.</li>      
+               <li>Shape into medium patties and pan-fry in oil until golden on both sides.</li>      
+               <li>Prepare a simple omelette and cut it into bun-sized pieces.</li>      
+               <li>Toast buns lightly with a bit of oil.</li>      
+               <li>Assemble: Spread green chutney and tamarind chutney on buns, place kabab, then omelette, followed by onion and tomato slices.</li>      
+               <li>Close the bun and serve warm with extra chutney.</li>      
+           </ol>`,      
+    nutrition: `Calories: 380–450 kcal per bun | Carbs: 45g | Protein: 18–22g | Fat: 12–18g | Sodium: variable <br>`      
+},'Chana Chaat': {      
+    img: 'chana\ chat.jpg',      
+    desc: `Refreshing and tangy Chana Chaat — a popular South Asian street snack made with boiled chickpeas, fresh vegetables, chutneys, and spices.      
+           <br><b>Instructions:</b> Mix boiled chickpeas with chopped vegetables, spices, chutneys, and serve fresh.      
+                 
+           <br><b>Ingredients:</b>      
+           Boiled chickpeas 2 cups,      
+           Onion 1 small (finely chopped),      
+           Tomato 1 medium (diced),      
+           Boiled potato 1 (cubed),      
+           Green chilies 1–2 (chopped),      
+           Fresh coriander handful (chopped),      
+           Tamarind chutney 2–3 tbsp,      
+           Green chutney 1–2 tbsp,      
+           Lemon juice 2 tbsp,      
+           Chaat masala 1 tsp,      
+           Cumin powder 1/2 tsp,      
+           Salt 1/2–1 tsp (to taste),      
+           Sev or papri (optional topping),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Add boiled chickpeas to a mixing bowl.</li>      
+               <li>Add onion, tomato, potato, green chilies, and coriander.</li>      
+               <li>Mix in tamarind chutney and green chutney.</li>      
+               <li>Season with chaat masala, cumin powder, and salt.</li>      
+               <li>Add lemon juice and toss everything well.</li>      
+               <li>Top with sev or crushed papri if desired.</li>      
+               <li>Serve immediately for the best taste and texture.</li>      
+           </ol>`,      
+    nutrition: `Calories: 180–250 kcal per serving | Carbs: 30–35g | Protein: 8–10g | Fat: 3–6g | Fiber: High <br>`      
+},'Dahi Bhallay': {      
+    img: 'Dahi\ Bhallay.jpg',      
+    desc: `Soft and creamy Dahi Bhallay — a traditional South Asian snack made with fluffy lentil fritters soaked in spiced yogurt and topped with chutneys and chaat masala.      
+           <br><b>Instructions:</b> Prepare lentil batter, fry bhallas, soak in warm water, and serve with seasoned yogurt and chutneys.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Bhallas (Fritters):</b>      
+           Urad dal (split white lentils) 1 cup (soaked 4 hrs),      
+           Moong dal 1/4 cup (optional, soaked),      
+           Ginger 1/2 inch piece,      
+           Green chilies 1–2,      
+           Salt 1 tsp,      
+           Cumin seeds 1/2 tsp,      
+           Baking soda 1 pinch (optional for fluffiness),      
+           Oil for frying,      
+           
+           <br><b>For Yogurt Mixture:</b>      
+           Yogurt 2 cups (whisked),      
+           Sugar 1–2 tsp (optional),      
+           Salt 1/2 tsp,      
+           Roasted cumin powder 1/2 tsp,      
+           
+           <br><b>For Toppings:</b>      
+           Tamarind chutney 2–3 tbsp,      
+           Green chutney 1–2 tbsp,      
+           Chaat masala 1 tsp,      
+           Red chili powder 1/2 tsp,      
+           Fresh coriander (chopped),      
+           Sev or papri (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Drain soaked lentils and grind with ginger and green chilies to form a thick, smooth batter.</li>      
+               <li>Add salt, cumin, and baking soda. Mix well and rest 10 minutes.</li>      
+               <li>Heat oil and fry spoonfuls of batter until golden and fluffy.</li>      
+               <li>Soak fried bhallas in warm water for 5–10 minutes, then gently squeeze out excess water.</li>      
+               <li>Prepare yogurt by mixing whisked yogurt with salt, sugar, and cumin powder.</li>      
+               <li>Place bhallas in a dish and pour yogurt mixture over them until fully covered.</li>      
+               <li>Top with tamarind chutney, green chutney, chaat masala, red chili powder, and coriander.</li>      
+               <li>Chill for 30 minutes before serving for best flavor.</li>      
+           </ol>`,      
+    nutrition: `Calories: 250–320 kcal per serving | Carbs: 35g | Protein: 10g | Fat: 8–12g | Sodium: variable <br>`      
+},'Samosa': {      
+    img: 'samosa.jpg',      
+    desc: `Crispy, golden Samosas — a popular South Asian snack filled with a spicy potato or meat mixture and deep-fried to perfection.      
+           <br><b>Instructions:</b> Prepare dough, cook filling, shape samosas into cones, fill, seal, and fry until crisp and golden.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Dough:</b>      
+           All-purpose flour 2 cups,      
+           Salt 1/2 tsp,      
+           Carom seeds (ajwain) 1/2 tsp,      
+           Oil 3 tbsp (for dough),      
+           Water as needed,      
+           
+           <br><b>For Potato Filling:</b>      
+           Potatoes 3–4 (boiled & mashed),      
+           Peas 1/2 cup (optional),      
+           Green chilies 1–2 (chopped),      
+           Cumin seeds 1 tsp,      
+           Coriander powder 1 tsp,      
+           Red chili powder 1/2 tsp,      
+           Turmeric 1/4 tsp,      
+           Garam masala 1/2 tsp,      
+           Salt 1 tsp (to taste),      
+           Oil 1–2 tbsp,      
+           
+           <br><b>For Frying:</b>      
+           Oil for deep frying,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li><b>Make Dough:</b> Mix flour, salt, and carom seeds. Add oil and rub into flour. Add water gradually and knead into a firm dough. Rest 20–30 minutes.</li>      
+               
+               <li><b>Prepare Filling:</b> Heat oil, add cumin seeds. Add peas, chilies, and spices. Add mashed potatoes and mix well. Cook 2–3 minutes and let cool.</li>      
+               
+               <li><b>Shape Samosas:</b> Divide dough into balls, roll into ovals, cut in half. Make a cone, fill with potato mixture, and seal edges with water.</li>      
+               
+               <li><b>Fry:</b> Heat oil on medium-low. Fry samosas until golden and crispy (8–10 minutes for best texture).</li>      
+               
+               <li>Serve hot with tamarind chutney, mint chutney, or ketchup.</li>      
+           </ol>`,      
+    nutrition: `Calories: 150–180 kcal per samosa | Carbs: 20–25g | Protein: 3–4g | Fat: 6–10g | Sodium: variable <br>`      
+},'Pakora': {      
+    img: 'Pakkora.jpg',      
+    desc: `Crispy and flavorful Pakoras — a classic South Asian fritter made by coating vegetables or chicken in a seasoned gram flour batter and deep frying until golden.      
+           <br><b>Instructions:</b> Prepare batter, dip vegetables or chicken, and deep-fry until crisp.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Batter:</b>      
+           Gram flour (besan) 1 cup,      
+           Rice flour 2 tbsp (optional for extra crispiness),      
+           Cumin seeds 1/2 tsp,      
+           Coriander seeds crushed 1/2 tsp,      
+           Red chili powder 1 tsp,      
+           Turmeric 1/4 tsp,      
+           Salt 1 tsp (to taste),      
+           Baking soda 1 pinch (optional),      
+           Water as needed to make thick batter,      
+           
+           <br><b>Vegetable Options:</b>      
+           Potatoes thinly sliced 1 cup,      
+           Onions sliced 1 cup,      
+           Spinach 1 handful,      
+           Cauliflower small florets 1 cup,      
+           Green chilies sliced (optional),      
+           
+           <br><b>For Frying:</b>      
+           Oil for deep frying,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Mix gram flour, rice flour, spices, and salt in a bowl.</li>      
+               <li>Add water gradually to form a thick, smooth batter.</li>      
+               <li>Add sliced vegetables and mix well, or dip each piece individually.</li>      
+               <li>Heat oil on medium flame.</li>      
+               <li>Drop batter-coated vegetables into oil and fry until golden and crispy.</li>      
+               <li>Drain on paper towels.</li>      
+               <li>Serve hot with mint chutney, tamarind chutney, or ketchup.</li>      
+           </ol>`,      
+    nutrition: `Calories: 120–150 kcal per pakora | Carbs: 10–15g | Protein: 2–4g | Fat: 7–10g | Sodium: variable <br>`      
+},'Jalebi': {      
+    img: 'jalebi.jpg',      
+    desc: `Crispy, syrup-soaked Jalebi — a famous South Asian sweet made by deep-frying fermented batter into spiral shapes and dipping them in warm sugar syrup.      
+           <br><b>Instructions:</b> Prepare batter, allow slight fermentation, pipe spirals into hot oil, fry until crisp, and dip in warm sugar syrup.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Batter:</b>      
+           All-purpose flour 1 cup,      
+           Cornflour 2 tbsp,      
+           Yogurt 2 tbsp,      
+           Baking powder 1/4 tsp,      
+           Food color (orange/yellow) a pinch,      
+           Water as needed (to make thick pourable batter),      
+           
+           <b>For Sugar Syrup:</b>      
+           Sugar 1 cup,      
+           Water 1/2 cup,      
+           Lemon juice 1/2 tsp (prevents crystallization),      
+           Cardamom powder 1/4 tsp (optional),      
+           Rose water 1/2 tsp (optional),      
+           
+           <b>For Frying:</b>      
+           Oil or ghee,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Mix flour, cornflour, yogurt, and baking powder in a bowl.</li>      
+               <li>Add water gradually to form a smooth, thick batter. Add food color.</li>      
+               <li>Let batter rest for 1–2 hours for slight fermentation.</li>      
+               <li>Prepare syrup by boiling sugar and water until slightly sticky (one-thread consistency). Add lemon juice and optional flavors.</li>      
+               <li>Heat oil or ghee on medium flame.</li>      
+               <li>Pour batter into a squeeze bottle or piping bag. Pipe spiral shapes into hot oil.</li>      
+               <li>Fry until crisp and golden.</li>      
+               <li>Immediately dip hot jalebis into warm syrup for a few seconds.</li>      
+               <li>Serve warm for the best taste.</li>      
+           </ol>`,      
+    nutrition: `Calories: ~150–180 kcal per piece | Carbs: High | Protein: Low | Fat: Moderate | Sugar: High <br>`      
+},'Kulfi': {      
+    img: 'kulfi.jpg',      
+    desc: `Rich and creamy Kulfi — a traditional South Asian frozen dessert made with slow-cooked milk, sugar, nuts, and cardamom for a dense, flavorful treat.      
+           <br><b>Instructions:</b> Reduce milk until thick, mix in sugar and nuts, pour into molds, and freeze until solid.      
+                 
+           <br><b>Ingredients:</b>      
+           Full-fat milk 1 liter,      
+           Sugar 1/2 cup (adjust to taste),      
+           Cardamom powder 1/2 tsp,      
+           Almonds 2 tbsp (finely chopped),      
+           Pistachios 2 tbsp (chopped),      
+           Condensed milk 1/4 cup (optional for richness),      
+           Saffron a pinch (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Pour milk into a heavy pan and boil.</li>      
+               <li>Reduce heat and simmer, stirring frequently, until milk thickens to about half its original volume.</li>      
+               <li>Add sugar and mix well until dissolved.</li>      
+               <li>Stir in cardamom powder, almonds, pistachios, and saffron if using.</li>      
+               <li>Cook for another 5–7 minutes, then remove from heat.</li>      
+               <li>Let mixture cool completely.</li>      
+               <li>Pour into kulfi molds or small cups.</li>      
+               <li>Freeze for 6–8 hours or overnight until firm.</li>      
+               <li>To serve, dip molds briefly in warm water and gently pull out the kulfi.</li>      
+           </ol>`,      
+    nutrition: `Calories: 220–280 kcal per kulfi | Carbs: 25–30g | Protein: 6–8g | Fat: 10–15g | Sugar: Moderate–High <br>`      
+},'Chocolate Lava Cake': {      
+    img: 'chocolate_lava_cake.jpg',      
+    desc: `Warm, rich, and decadent Chocolate Lava Cake — a molten-centered dessert made with dark chocolate, butter, and a soft cake exterior.      
+           <br><b>Instructions:</b> Make a chocolate batter, pour into ramekins, bake briefly so the center stays molten, and serve warm.      
+                 
+           <br><b>Ingredients:</b>      
+           Dark chocolate 100g,      
+           Butter 100g,      
+           Eggs 2,      
+           Egg yolks 2,      
+           Sugar 1/4 cup,      
+           All-purpose flour 1/4 cup,      
+           Vanilla extract 1 tsp,      
+           Butter & cocoa (for greasing ramekins),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Preheat oven to 220°C (425°F). Grease ramekins with butter and dust with cocoa.</li>      
+               <li>Melt chocolate and butter together until smooth.</li>      
+               <li>In another bowl, whisk eggs, yolks, and sugar until pale and thick.</li>      
+               <li>Add the melted chocolate mixture and mix well.</li>      
+               <li>Fold in flour gently until just combined.</li>      
+               <li>Pour batter into greased ramekins, filling about ¾ full.</li>      
+               <li>Bake for 10–12 minutes until edges are set but center is soft.</li>      
+               <li>Run a knife around the edges, invert onto a plate, and serve immediately.</li>      
+               <li>Optional: Serve with ice cream, berries, or powdered sugar.</li>      
+           </ol>`,      
+    nutrition: `Calories: ~350–450 kcal per cake | Carbs: 35–45g | Protein: 6–8g | Fat: 22–30g | Sugar: High <br>`      
+},'Tiramisu': {      
+    img: 'tiramisu.jpg',      
+    desc: `Classic Italian Tiramisu — a layered dessert of coffee-soaked ladyfingers, mascarpone cream, and cocoa powder, rich and creamy.      
+           <br><b>Instructions:</b> Soak ladyfingers in coffee, layer with mascarpone mixture, chill, and dust with cocoa before serving.      
+                 
+           <br><b>Ingredients:</b>      
+           Ladyfingers (savoiardi) 200g,      
+           Mascarpone cheese 250g,      
+           Eggs 3 (separated),      
+           Sugar 1/2 cup,      
+           Strong brewed coffee 1 cup (cooled),      
+           Cocoa powder 2 tbsp (for dusting),      
+           Coffee liqueur 1–2 tbsp (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Separate eggs. Beat egg yolks with sugar until pale and creamy.</li>      
+               <li>Fold mascarpone into the egg yolk mixture until smooth.</li>      
+               <li>Whip egg whites until stiff peaks form and gently fold into mascarpone mixture.</li>      
+               <li>Combine coffee and optional liqueur in a shallow dish.</li>      
+               <li>Quickly dip ladyfingers into coffee mixture, ensuring they are soaked but not soggy.</li>      
+               <li>Layer soaked ladyfingers in a dish. Spread half of the mascarpone mixture over them.</li>      
+               <li>Add another layer of soaked ladyfingers and top with remaining mascarpone mixture.</li>      
+               <li>Chill in refrigerator for at least 4 hours or overnight.</li>      
+               <li>Dust with cocoa powder before serving.</li>      
+           </ol>`,      
+    nutrition: `Calories: 450–550 kcal per serving | Carbs: 35–45g | Protein: 6–8g | Fat: 30–35g | Sugar: High <br>`      
+},'Gulab Jamun': {      
+    img: 'gulab_jamun.jpg',      
+    desc: `Soft and syrupy Gulab Jamun — a classic South Asian dessert made with milk solids or khoya, fried to golden perfection, and soaked in fragrant sugar syrup.      
+           <br><b>Instructions:</b> Prepare dough, shape into small balls, fry until golden, and soak in warm sugar syrup.      
+                 
+           <br><b>Ingredients:</b>      
+           Khoya (mawa) 250g,      
+           All-purpose flour 2 tbsp,      
+           Baking powder 1/4 tsp,      
+           Milk 2–3 tbsp (to knead dough),      
+           Ghee or oil for frying,      
+           
+           <br><b>For Sugar Syrup:</b>      
+           Sugar 2 cups,      
+           Water 1 cup,      
+           Cardamom pods 3–4,      
+           Rose water 1 tsp (optional),      
+           Saffron strands a few (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>In a bowl, crumble khoya and mix with flour and baking powder. Knead gently with milk to form a smooth, soft dough.</li>      
+               <li>Divide dough into small smooth balls, avoiding cracks.</li>      
+               <li>Heat ghee or oil on low-medium flame. Fry the balls slowly until golden brown, turning occasionally for even cooking.</li>      
+               <li>Meanwhile, prepare sugar syrup: boil sugar, water, and cardamom until slightly sticky. Add rose water and saffron if using.</li>      
+               <li>Remove fried gulab jamuns and immediately place them in warm sugar syrup. Let them soak for at least 30 minutes.</li>      
+               <li>Serve warm or at room temperature.</li>      
+           </ol>`,      
+    nutrition: `Calories: 200–250 kcal per piece | Carbs: 30–35g | Protein: 3–4g | Fat: 8–10g | Sugar: High <br>`      
+},'Banoffee Pie': {      
+    img: 'banoffee_pie.jpg',      
+    desc: `Rich and indulgent Banoffee Pie — a no-bake dessert made with a buttery biscuit crust, caramel, fresh bananas, and whipped cream.      
+           <br><b>Instructions:</b> Prepare crust, layer with caramel, sliced bananas, and whipped cream, then chill before serving.      
+                 
+           <br><b>Ingredients:</b>      
+           Digestive biscuits 200g (or graham crackers),      
+           Butter 100g (melted),      
+           Sweetened condensed milk 1 can (for caramel),      
+           Bananas 2–3 (sliced),      
+           Heavy cream 1 cup (whipped),      
+           Sugar 1–2 tbsp (optional, for whipped cream),      
+           Dark chocolate shavings (optional, for garnish),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Crush biscuits finely and mix with melted butter. Press into the base of a pie dish to form a firm crust. Chill for 30 minutes.</li>      
+               <li>Prepare caramel by boiling condensed milk in a double boiler or simmering unopened can in water for 2–3 hours (ensure can is fully submerged). Let cool before opening.</li>      
+               <li>Spread caramel evenly over the chilled biscuit crust.</li>      
+               <li>Arrange banana slices over the caramel layer.</li>      
+               <li>Whip heavy cream with sugar until soft peaks form and spread over bananas.</li>      
+               <li>Garnish with chocolate shavings or cocoa powder if desired.</li>      
+               <li>Chill for at least 1 hour before serving.</li>      
+           </ol>`,      
+    nutrition: `Calories: 350–450 kcal per slice | Carbs: 50–60g | Protein: 4–6g | Fat: 18–25g | Sugar: High <br>`      
+},'Ras Malai': {      
+    img: 'ras_malai.jpg',      
+    desc: `Soft and creamy Ras Malai — a traditional Indian dessert made with flattened paneer (chenna) balls soaked in sweet, cardamom-flavored milk.      
+           <br><b>Instructions:</b> Prepare chenna balls, cook in sugar syrup, soak in flavored milk, and chill before serving.      
+                 
+           <br><b>Ingredients:</b>      
+           Paneer (chenna) 250g,      
+           Sugar 1 cup (for syrup),      
+           Water 4 cups (for syrup),      
+           Full-fat milk 2 cups (for soaking),      
+           Cardamom powder 1/2 tsp,      
+           Saffron strands a few (optional),      
+           Pistachios or almonds 2 tbsp (chopped, for garnish),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare paneer balls: Knead paneer gently and form smooth, flattened balls.</li>      
+               <li>Boil sugar and water to make a light syrup. Add paneer balls and cook on medium heat for 10–12 minutes until they expand.</li>      
+               <li>Remove paneer balls and squeeze out excess syrup. Set aside.</li>      
+               <li>Boil milk in a pan, reduce slightly, and add cardamom powder and saffron. Cool slightly.</li>      
+               <li>Add paneer balls to the flavored milk and let them soak for at least 2–3 hours, preferably chilled.</li>      
+               <li>Garnish with chopped pistachios or almonds before serving.</li>      
+           </ol>`,      
+    nutrition: `Calories: 180–220 kcal per piece | Carbs: 25–30g | Protein: 6–8g | Fat: 8–10g | Sugar: High <br>`      
+},'Caramel Pudding': {      
+    img: 'caramel_pudding.jpg',      
+    desc: `Smooth and creamy Caramel Pudding — a custard dessert topped with rich caramel sauce, perfect for a sweet treat.      
+           <br><b>Instructions:</b> Prepare caramel, make custard mixture, bake or steam until set, chill, and serve inverted with caramel sauce.      
+                 
+           <br><b>Ingredients:</b>      
+           Sugar 3/4 cup (for caramel),      
+           Water 2 tbsp (for caramel),      
+           Milk 2 cups,      
+           Eggs 3,      
+           Sugar 1/4 cup (for custard),      
+           Vanilla extract 1 tsp,      
+           Salt a pinch,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare caramel: In a small pan, heat sugar and water until it melts and turns golden brown. Pour caramel into pudding molds and let it set.</li>      
+               <li>In a bowl, whisk eggs, sugar, and vanilla until smooth.</li>      
+               <li>Heat milk until warm (do not boil) and slowly add to egg mixture, stirring constantly to prevent curdling.</li>      
+               <li>Pour custard mixture over set caramel in molds.</li>      
+               <li>Bake in a water bath at 160°C (320°F) for 30–40 minutes until custard is set, or steam for 25–30 minutes.</li>      
+               <li>Let puddings cool to room temperature, then refrigerate for 2–3 hours.</li>      
+               <li>Invert onto a plate to serve, allowing caramel to drizzle over the pudding.</li>      
+           </ol>`,      
+    nutrition: `Calories: 220–280 kcal per serving | Carbs: 30–35g | Protein: 6–8g | Fat: 10–12g | Sugar: High <br>`      
+},'Mango Mousse': {      
+    img: 'mango_mousse.jpg',      
+    desc: `Light and fluffy Mango Mousse — a chilled dessert made with ripe mangoes, whipped cream, and a hint of sugar, perfect for a refreshing treat.      
+           <br><b>Instructions:</b> Puree mangoes, fold in whipped cream and sugar, chill until set, and serve garnished with fruit or mint.      
+                 
+           <br><b>Ingredients:</b>      
+           Ripe mangoes 2 cups (pureed),      
+           Heavy cream 1 cup (whipped),      
+           Sugar 2–3 tbsp (adjust to taste),      
+           Gelatin 1 tsp (optional, for firmer texture),      
+           Water 2 tbsp (for gelatin, if using),      
+           Mint leaves or mango cubes for garnish,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>If using gelatin, sprinkle it over water and let it bloom for 5 minutes. Heat gently to dissolve completely.</li>      
+               <li>Puree ripe mangoes in a blender until smooth.</li>      
+               <li>Whip heavy cream with sugar until soft peaks form.</li>      
+               <li>Fold mango puree into whipped cream gently to retain fluffiness.</li>      
+               <li>Add dissolved gelatin if using and mix well.</li>      
+               <li>Pour mousse into serving glasses or bowls.</li>      
+               <li>Chill in the refrigerator for at least 2 hours until set.</li>      
+               <li>Garnish with mango cubes or mint leaves before serving.</li>      
+           </ol>`,      
+    nutrition: `Calories: 180–220 kcal per serving | Carbs: 25–30g | Protein: 2–3g | Fat: 10–12g | Sugar: Moderate–High <br>`      
+},'Fruit Trifle': {      
+    img: 'fruit_trifle.jpg',      
+    desc: `Colorful and layered Fruit Trifle — a chilled dessert made with sponge cake, custard, fresh fruits, jelly, and whipped cream.      
+           <br><b>Instructions:</b> Layer cake, custard, fruits, jelly, and cream in a glass dish, chill, and serve.      
+                 
+           <br><b>Ingredients:</b>      
+           Sponge cake 200g (cut into cubes),      
+           Custard 1 cup (prepared or instant),      
+           Fresh fruits 2 cups (mixed berries, mango, kiwi, banana),      
+           Jelly 1 cup (prepared),      
+           Whipped cream 1 cup,      
+           Sugar 1–2 tbsp (optional, for cream),      
+           Nuts or chocolate shavings for garnish (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare custard and jelly according to instructions and let them cool.</li>      
+               <li>In a trifle bowl or individual glasses, layer sponge cake cubes at the bottom.</li>      
+               <li>Pour a layer of custard over the cake.</li>      
+               <li>Add a layer of fresh fruits and a layer of jelly.</li>      
+               <li>Top with whipped cream. Sweeten cream with sugar if desired.</li>      
+               <li>Repeat layers if using a large dish, ending with whipped cream.</li>      
+               <li>Garnish with chopped nuts, chocolate shavings, or extra fruits.</li>      
+               <li>Chill in the refrigerator for at least 2 hours before serving.</li>      
+           </ol>`,      
+    nutrition: `Calories: 250–300 kcal per serving | Carbs: 35–40g | Protein: 4–6g | Fat: 10–12g | Sugar: Moderate–High <br>`      
+},
+'Cucumber Bites with Cream Cheese': {  
+    img: 'cucumberbytes.jpg',  
+    desc: `Refreshing cucumber bites topped with creamy, flavorful cream cheese — perfect as an appetizer or snack.  
+           <br><b>Instructions:</b> Slice cucumbers, prepare cream cheese mixture, pipe or spoon onto cucumber slices, and garnish as desired.  
+           <br><b>Ingredients:</b>  
+           Cucumbers 2–3 medium,  
+           Cream cheese 1/2 cup (softened),  
+           Fresh herbs (dill, chives, or parsley) 1–2 tsp,  
+           Lemon juice 1 tsp,  
+           Salt 1/4 tsp (to taste),  
+           Black pepper 1/4 tsp,  
+           Optional toppings: smoked salmon, cherry tomatoes, olives, or paprika, as desired  
+             
+           <br><b>Recipe:</b>  
+           <ol>  
+               <li>Wash cucumbers and slice into 1/2-inch thick rounds.</li>  
+               <li>In a small bowl, mix softened cream cheese with chopped herbs, lemon juice, salt, and black pepper until smooth.</li>  
+               <li>Pipe or spoon the cream cheese mixture onto each cucumber slice.</li>  
+               <li>Garnish with optional toppings like smoked salmon, cherry tomatoes, olives, or a sprinkle of paprika.</li>  
+               <li>Serve immediately or chill for 15–20 minutes before serving for best flavor.</li>  
+           </ol>`,  
+    nutrition:  ' Calories: 50 kcal | Protein: 2g | Carbs: 2g | Fat: 4g | Sodium: variable <br> '
+},
+'Shrimp Cocktail': {    
+    img: 'Shrimpcocktail.jpg',    
+    desc: `Classic Shrimp Cocktail — chilled, succulent shrimp served with zesty cocktail sauce.     
+           <br><b>Instructions:</b> Boil or steam shrimp until cooked, chill, and serve with a tangy sauce for a refreshing appetizer.    
+               
+           <br><b>Ingredients:</b>    
+           Shrimp 500g (peeled and deveined),    
+           Salt 1 tsp (for boiling water),    
+           Lemon 1 (sliced, for boiling),    
+           <br><b>For cocktail sauce:</b>    
+           Ketchup 1/2 cup,    
+           Horseradish 2 tbsp (adjust to taste),    
+           Lemon juice 1 tbsp,    
+           Worcestershire sauce 1 tsp,    
+           Hot sauce a few dashes (optional),    
+               
+           <br><b>Recipe:</b>    
+           <ol>    
+               <li>Bring a pot of water to a boil, add salt and lemon slices.</li>    
+               <li>Add shrimp and cook for 2–3 minutes until pink and opaque. Do not overcook.</li>    
+               <li>Drain shrimp and immediately transfer to an ice bath to chill.</li>    
+               <li>Prepare cocktail sauce: mix ketchup, horseradish, lemon juice, Worcestershire sauce, and hot sauce.</li>    
+               <li>Serve chilled shrimp with cocktail sauce on the side. Garnish with lemon wedges.</li>    
+           </ol>`,    
+    nutrition: 'Calories: 200 kcal | Protein: 30g | Carbs: 10g | Fat: 5g | Sodium: variable <br>'    
+},
+//Spring Rolls
+'Spring Rolls': {      
+    img: 'Spring\ Rolls\ .jpg',      
+    desc: `Crispy and delicious Spring Rolls — thin pastry wrappers filled with a savory mix of vegetables and/or meat, perfect as an appetizer or snack.      
+           <br><b>Instructions:</b> Prepare the filling, wrap it in spring roll sheets, and deep-fry or bake until golden and crispy.      
+                 
+           <br><b>Ingredients:</b>      
+           Spring roll wrappers 10–12 sheets,      
+           Cabbage shredded 2 cups,      
+           Carrot grated 1 cup,      
+           Bell pepper 1 cup (finely sliced),      
+           Bean sprouts 1 cup (optional),      
+           Green onions 3–4 chopped,      
+           Garlic 2 cloves minced,      
+           Soy sauce 2 tbsp,      
+           Salt 1 tsp (to taste),      
+           Black pepper 1/2 tsp,      
+           Oil for frying 1–2 cups,      
+           Optional protein: cooked chicken, shrimp, or tofu 1 cup,      
+           Cornstarch slurry 2 tbsp (1 tbsp cornstarch + 1 tbsp water) to seal edges,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare the filling: heat 1–2 tbsp oil in a pan, sauté garlic until fragrant.</li>      
+               <li>Add vegetables and optional protein, stir-fry for 3–5 minutes.</li>      
+               <li>Add soy sauce, salt, and black pepper. Cook until vegetables are slightly tender but still crisp. Let the filling cool.</li>      
+               <li>Place a wrapper on a clean surface, spoon filling near one edge, fold sides in, and roll tightly. Seal edges with cornstarch slurry.</li>      
+               <li>Heat oil in a deep pan. Fry spring rolls in batches until golden brown and crispy, about 2–3 minutes per side. Drain on paper towels.</li>      
+               <li>Serve hot with sweet chili sauce, soy sauce, or your favorite dipping sauce.</li>      
+           </ol>`,      
+    nutrition: 'Calories:200 kcal per roll | Protein: 5g | Carbs: 25g | Fat: 10g | Sodium: variable <br>'      
+},
+'Stuffed Mushrooms': {      
+    img: 'stuffed_mushrooms.jpg',      
+    desc: `Savory Stuffed Mushrooms — large mushroom caps filled with a flavorful mixture of cheese, herbs, and breadcrumbs, baked until golden and delicious.      
+           <br><b>Instructions:</b> Clean mushroom caps, prepare filling, stuff, and bake until tender and golden.      
+                 
+           <br><b>Ingredients:</b>      
+           Large mushrooms 12–15 (stems removed),      
+           Cream cheese 1/2 cup,      
+           Parmesan cheese 1/4 cup grated,      
+           Breadcrumbs 1/4 cup,      
+           Garlic 2 cloves minced,      
+           Fresh parsley 2 tbsp chopped,      
+           Olive oil 2 tbsp,      
+           Salt 1/2 tsp (to taste),      
+           Black pepper 1/4 tsp,      
+           Optional: cooked bacon or sausage 1/4 cup finely chopped,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Preheat oven to 180°C (350°F).</li>      
+               <li>Clean mushroom caps and remove stems. Chop stems finely for the filling.</li>      
+               <li>In a pan, heat 1 tbsp olive oil and sauté garlic and chopped stems until soft.</li>      
+               <li>In a bowl, mix sautéed stems, cream cheese, Parmesan, breadcrumbs, parsley, salt, black pepper, and optional bacon/sausage.</li>      
+               <li>Stuff each mushroom cap generously with the filling.</li>      
+               <li>Place stuffed mushrooms on a baking tray, drizzle with remaining olive oil.</li>      
+               <li>Bake for 20–25 minutes or until mushrooms are tender and the tops are golden brown.</li>      
+               <li>Serve warm as an appetizer or side dish.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 120 kcal per mushroom | Protein: 5g | Carbs: 6g | Fat: 9g | Sodium: variable <br>'      
+},'Meatballs': {      
+    img: 'meatballs.jpg',      
+    desc: `Juicy and flavorful Meatballs — tender ground meat mixed with herbs and spices, baked or pan-fried, perfect as an appetizer or main dish.      
+           <br><b>Instructions:</b> Mix ingredients, shape into balls, cook in oven or on stovetop, and serve with sauce or dip.      
+                 
+           <br><b>Ingredients:</b>      
+           Ground beef or lamb 500g (about 1 lb),      
+           Breadcrumbs 1/2 cup,      
+           Milk 1/4 cup,      
+           Egg 1 large,      
+           Onion 1 small finely chopped,      
+           Garlic 2 cloves minced,      
+           Fresh parsley 2 tbsp chopped,      
+           Salt 1 tsp (to taste),      
+           Black pepper 1/2 tsp,      
+           Optional spices: paprika 1/2 tsp, cumin 1/4 tsp, chili flakes 1/4 tsp,      
+           Olive oil 2–3 tbsp for frying or brushing if baking,      
+           Optional: tomato sauce or gravy for serving,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Preheat oven to 200°C (400°F) if baking.</li>      
+               <li>In a bowl, combine breadcrumbs and milk; let soak for 5 minutes.</li>      
+               <li>Add ground meat, egg, onion, garlic, parsley, salt, black pepper, and optional spices. Mix gently until just combined.</li>      
+               <li>Shape mixture into small balls, about 1–1.5 inches in diameter.</li>      
+               <li>Option 1 – Pan-fry: Heat olive oil in a skillet over medium heat and cook meatballs, turning occasionally, until browned and cooked through, about 10–12 minutes.</li>      
+               <li>Option 2 – Bake: Place meatballs on a greased baking tray, brush with olive oil, and bake for 15–20 minutes until cooked through.</li>      
+               <li>Serve hot with tomato sauce, gravy, pasta, or as an appetizer.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 150 kcal per meatball | Protein: 10g | Carbs: 5g | Fat: 9g | Sodium: variable <br>'      
+},'Sliders': {      
+    img: 'sliders.jpg',      
+    desc: `Mini burgers — juicy patties sandwiched in small buns with fresh toppings, perfect for parties or snacks.      
+           <br><b>Instructions:</b> Prepare small patties, cook, assemble with buns and toppings, and serve hot.      
+                 
+           <br><b>Ingredients:</b>      
+           Slider buns 8–10,      
+           Ground beef, chicken, or turkey 500g (about 1 lb),      
+           Salt 1 tsp (to taste),      
+           Black pepper 1/2 tsp,      
+           Garlic powder 1/2 tsp,      
+           Onion powder 1/2 tsp,      
+           Cheese slices 4–5 (optional, cut to size),      
+           Lettuce leaves 8–10,      
+           Tomato slices 8–10,      
+           Pickles 8–10 slices (optional),      
+           Ketchup, mustard, or mayo as desired,      
+           Olive oil 1–2 tbsp for cooking,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>In a bowl, season ground meat with salt, black pepper, garlic powder, and onion powder. Mix gently.</li>      
+               <li>Shape into small patties slightly larger than slider buns.</li>      
+               <li>Heat olive oil in a skillet over medium heat. Cook patties 3–4 minutes per side or until fully cooked. Add cheese on top during the last minute of cooking if using.</li>      
+               <li>Lightly toast slider buns in a pan or oven.</li>      
+               <li>Assemble sliders: place lettuce on the bottom bun, add patty with cheese, tomato slice, pickle, and condiments as desired. Top with the other half of the bun.</li>      
+               <li>Serve immediately while warm.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 200 kcal per slider | Protein: 12g | Carbs: 18g | Fat: 10g | Sodium: variable <br> '
+},'Nachos': {      
+    img: 'nachos.jpg',      
+    desc: `Loaded Nachos — crispy tortilla chips topped with melted cheese, beans, meat, vegetables, and sauces for a perfect snack or appetizer.      
+           <br><b>Instructions:</b> Layer chips with toppings, bake or broil until cheese melts, and serve hot with dips.      
+                 
+           <br><b>Ingredients:</b>      
+           Tortilla chips 4 cups,      
+           Shredded cheddar or Mexican blend cheese 2 cups,      
+           Cooked ground beef or chicken 1 cup (optional),      
+           Black beans 1/2 cup (rinsed and drained),      
+           Jalapeños sliced 1/4 cup (optional),      
+           Tomatoes 1/2 cup diced,      
+           Onion 1/4 cup diced,      
+           Corn 1/4 cup (optional),      
+           Sour cream, guacamole, salsa for serving,      
+           Olive oil 1 tbsp (optional, for drizzling),      
+           Fresh cilantro for garnish,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Preheat oven to 180°C (350°F).</li>      
+               <li>Spread tortilla chips evenly on a baking tray.</li>      
+               <li>Layer with black beans, cooked meat (if using), corn, tomatoes, onions, jalapeños, and shredded cheese.</li>      
+               <li>Bake in the oven for 5–10 minutes or until cheese is melted and bubbly.</li>      
+               <li>Remove from oven, drizzle with olive oil if desired, and garnish with fresh cilantro.</li>      
+               <li>Serve hot with sour cream, guacamole, and salsa on the side.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 350 kcal per serving | Protein: 15g | Carbs: 35g | Fat: 18g | Sodium: variable <br>      '
+},'Mini Quiches': {      
+    img: 'mini_quiches.jpg',      
+    desc: `Delicious Mini Quiches — bite-sized pastry shells filled with a savory egg mixture, cheese, vegetables, and optional meats, perfect for brunch or appetizers.      
+           <br><b>Instructions:</b> Prepare filling, pour into pastry cups, bake until set and golden, and serve warm.      
+                 
+           <br><b>Ingredients:</b>      
+           Pre-made mini pastry shells 12–15,      
+           Eggs 3 large,      
+           Milk 1/2 cup,      
+           Shredded cheese 1/2 cup (cheddar, mozzarella, or your choice),      
+           Onion 1 small finely chopped,      
+           Bell peppers 1/2 cup finely diced,      
+           Spinach 1/2 cup chopped (optional),      
+           Cooked bacon, ham, or sausage 1/2 cup chopped (optional),      
+           Salt 1/2 tsp (to taste),      
+           Black pepper 1/4 tsp,      
+           Olive oil 1 tsp (for sautéing vegetables),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Preheat oven to 180°C (350°F).</li>      
+               <li>In a pan, heat olive oil and sauté onion, bell peppers, and optional spinach until softened. Let cool slightly.</li>      
+               <li>In a bowl, whisk eggs, milk, salt, and black pepper.</li>      
+               <li>Add sautéed vegetables, optional cooked meat, and shredded cheese to the egg mixture. Stir gently to combine.</li>      
+               <li>Place pastry shells on a baking tray and pour filling into each shell, filling about 3/4 full.</li>      
+               <li>Bake for 18–22 minutes or until egg is set and tops are lightly golden.</li>      
+               <li>Remove from oven, let cool for a few minutes, and serve warm.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 120 kcal per mini quiche | Protein: 6g | Carbs: 10g | Fat: 7g | Sodium: variable <br> '     
+},
+// Chineeses
+'Kung Pao Chicken': {      
+    img: 'kung_pao_chicken.jpg',      
+    desc: `Spicy and savory Kung Pao Chicken — tender chicken stir-fried with peanuts, vegetables, and a flavorful Sichuan-style sauce.      
+           <br><b>Instructions:</b> Marinate chicken, stir-fry with vegetables and peanuts, toss in sauce, and serve hot with rice or noodles.      
+                 
+           <br><b>Ingredients:</b>      
+           Chicken breast or thigh 500g (cut into bite-sized pieces),      
+           Salt 1/2 tsp,      
+           Black pepper 1/4 tsp,      
+           Soy sauce 2 tbsp,      
+           Cornstarch 1 tbsp,      
+           Vegetable oil 2–3 tbsp,      
+           Dried red chilies 6–8 (adjust to taste),      
+           Garlic 2 cloves minced,      
+           Ginger 1 tsp minced,      
+           Bell peppers 1 cup diced,      
+           Onion 1/2 cup diced,      
+           Roasted peanuts 1/4 cup,      
+           <br><b>Sauce:</b>      
+           Soy sauce 2 tbsp,      
+           Rice vinegar 1 tbsp,      
+           Hoisin sauce 1 tbsp,      
+           Sugar 1 tsp,      
+           Sesame oil 1 tsp,      
+           Water 2 tbsp,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>In a bowl, toss chicken with salt, black pepper, soy sauce, and cornstarch. Set aside for 10–15 minutes.</li>      
+               <li>Mix sauce ingredients in a small bowl and set aside.</li>      
+               <li>Heat vegetable oil in a wok or large pan over medium-high heat. Stir-fry dried red chilies briefly until fragrant.</li>      
+               <li>Add garlic and ginger, stir-fry for 30 seconds.</li>      
+               <li>Add chicken and cook until lightly browned and nearly cooked through.</li>      
+               <li>Add bell peppers and onions, stir-fry for 2–3 minutes until slightly tender.</li>      
+               <li>Pour in prepared sauce and stir well to coat chicken and vegetables. Cook for another 1–2 minutes until sauce thickens slightly.</li>      
+               <li>Stir in roasted peanuts and remove from heat.</li>      
+               <li>Serve hot with steamed rice or noodles.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 400 kcal per serving | Protein: 35g | Carbs: 20g | Fat: 20g | Sodium: variable <br>  ' 
+},'Sweet and Sour Pork': {      
+    img: 'sweet_sour_pork.jpg',      
+    desc: `Crispy pork tossed in a tangy sweet and sour sauce with colorful vegetables — a classic Chinese favorite.      
+           <br><b>Instructions:</b> Coat pork, fry until crispy, stir-fry with vegetables, toss in sauce, and serve hot with rice.      
+                 
+           <br><b>Ingredients:</b>      
+           Pork tenderloin or shoulder 500g (cut into bite-sized pieces),      
+           Salt 1/2 tsp,      
+           Black pepper 1/4 tsp,      
+           Cornstarch 3 tbsp,      
+           Egg 1 large,      
+           Vegetable oil 1/2 cup (for frying),      
+           Bell peppers 1 cup diced (mix of red and green),      
+           Pineapple chunks 1/2 cup,      
+           Onion 1/2 cup diced,      
+           Carrot 1/2 cup sliced thin,      
+           <br><b>Sauce:</b>      
+           Ketchup 3 tbsp,      
+           Rice vinegar 2 tbsp,      
+           Soy sauce 1 tbsp,      
+           Sugar 2 tbsp,      
+           Cornstarch 1 tsp (dissolved in 2 tbsp water),      
+           Water 1/4 cup,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Season pork with salt and black pepper. Beat the egg and coat pork pieces, then dredge in cornstarch until evenly coated.</li>      
+               <li>Heat vegetable oil in a deep pan or wok over medium-high heat. Fry pork in batches until golden and crispy. Drain on paper towels.</li>      
+               <li>In a separate pan, stir-fry onions, bell peppers, and carrots for 2–3 minutes until slightly tender.</li>      
+               <li>Add pineapple chunks and cooked pork to the vegetables.</li>      
+               <li>Mix all sauce ingredients in a small bowl, pour over pork and vegetables, and cook for 2–3 minutes, stirring gently until sauce thickens and coats everything evenly.</li>      
+               <li>Serve hot with steamed rice or noodles.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 450 kcal per serving | Protein: 30g | Carbs: 35g | Fat: 20g | Sodium: variable <br>  '    
+},'Peking Duck': {      
+    img: 'peking_duck.jpg',      
+    desc: `Crispy-skinned Peking Duck — succulent roasted duck served with thin pancakes, hoisin sauce, and fresh vegetables, a classic Beijing delicacy.      
+           <br><b>Instructions:</b> Prepare and air-dry duck, roast until skin is crispy, slice, and serve with pancakes and condiments.      
+                 
+           <br><b>Ingredients:</b>      
+           Whole duck 1 (about 2–2.5 kg),      
+           Salt 1–2 tsp,      
+           Five-spice powder 1 tsp,      
+           Honey 2 tbsp,      
+           Soy sauce 2 tbsp,      
+           Rice vinegar 1 tbsp,      
+           Scallions 4–5 sliced into thin strips,      
+           Cucumber 1 sliced into thin strips,      
+           Hoisin sauce for serving,      
+           Chinese pancakes 10–12 (store-bought or homemade),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Clean the duck thoroughly and pat dry. Remove excess fat if necessary.</li>      
+               <li>Prick the skin all over with a fork, being careful not to pierce the meat.</li>      
+               <li>Mix salt and five-spice powder, rub inside and outside of the duck.</li>      
+               <li>Combine honey, soy sauce, and rice vinegar, brush evenly over the skin.</li>      
+               <li>Hang or place duck in a cool, ventilated area for 4–6 hours (or overnight in the fridge) to dry the skin. This helps achieve crispiness.</li>      
+               <li>Preheat oven to 180°C (350°F). Roast duck breast side up for 1–1.5 hours, turning halfway if desired, until skin is golden brown and crisp. Optionally, increase temperature to 200°C (400°F) for the last 10 minutes for extra crispiness.</li>      
+               <li>Let duck rest for 10 minutes. Carve thin slices of meat and crispy skin.</li>      
+               <li>Serve with Chinese pancakes, hoisin sauce, scallions, and cucumber strips. Wrap slices in pancakes with sauce and vegetables to eat.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 500 kcal per serving | Protein: 35g | Carbs: 10g | Fat: 35g | Sodium: variable <br>      '
+},'Mapo Tofu': {      
+    img: 'mapo_tofu.jpg',      
+    desc: `Spicy and savory Mapo Tofu — silky tofu cubes in a flavorful chili and bean-based sauce with ground pork, a classic Sichuan dish.      
+           <br><b>Instructions:</b> Cook pork with aromatics, add sauce and tofu, simmer until flavors meld, and serve hot with rice.      
+                 
+           <br><b>Ingredients:</b>      
+           Soft or medium tofu 400g (cut into 1-inch cubes),      
+           Ground pork 150g,      
+           Garlic 2 cloves minced,      
+           Ginger 1 tsp minced,      
+           Green onions 2–3 chopped,      
+           Doubanjiang (fermented chili bean paste) 2 tbsp,      
+           Soy sauce 1 tbsp,      
+           Chicken or vegetable broth 1/2 cup,      
+           Cornstarch 1 tsp (mixed with 1 tbsp water),      
+           Sesame oil 1 tsp,      
+           Sichuan peppercorns 1/2 tsp (optional, ground),      
+           Vegetable oil 1–2 tbsp,      
+           Cooked rice for serving,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Heat vegetable oil in a pan or wok over medium heat. Add garlic, ginger, and half of the green onions, sauté until fragrant.</li>      
+               <li>Add ground pork and cook until browned.</li>      
+               <li>Stir in doubanjiang and cook for 1–2 minutes to release flavors.</li>      
+               <li>Add soy sauce and broth, bring to a gentle simmer.</li>      
+               <li>Carefully add tofu cubes, gently stirring to coat without breaking them.</li>      
+               <li>Simmer for 3–5 minutes until tofu is heated through and absorbs flavors.</li>      
+               <li>Pour in cornstarch slurry, stir gently until sauce thickens.</li>      
+               <li>Drizzle with sesame oil, sprinkle with ground Sichuan peppercorns and remaining green onions.</li>      
+               <li>Serve hot with steamed rice.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 300 kcal per serving | Protein: 15g | Carbs: 10g | Fat: 20g | Sodium: variable <br>      '
+},'Dumplings': {      
+    img: 'dumplings.jpg',      
+    desc: `Savory Dumplings — soft dough pockets filled with seasoned meat and/or vegetables, steamed, boiled, or pan-fried, perfect as a snack or appetizer.      
+           <br><b>Instructions:</b> Prepare filling, wrap in dough, cook by steaming, boiling, or frying, and serve with dipping sauce.      
+                 
+           <br><b>Ingredients:</b>      
+           Dumpling wrappers 20–25,      
+           Ground pork, chicken, or shrimp 250g,      
+           Cabbage 1 cup finely chopped,      
+           Green onions 2–3 chopped,      
+           Garlic 2 cloves minced,      
+           Ginger 1 tsp minced,      
+           Soy sauce 2 tbsp,      
+           Sesame oil 1 tsp,      
+           Salt 1/2 tsp,      
+           Black pepper 1/4 tsp,      
+           Optional: shredded carrots 1/4 cup,      
+           Dipping sauce: soy sauce, rice vinegar, chili oil as desired,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>In a bowl, mix ground meat with cabbage, green onions, garlic, ginger, soy sauce, sesame oil, salt, and pepper until well combined.</li>      
+               <li>Place a small spoonful of filling in the center of a dumpling wrapper.</li>      
+               <li>Moisten the edges of the wrapper with water, fold over, and pinch edges to seal tightly.</li>      
+               <li>Cooking methods:</li>      
+               <ul>      
+                   <li>Steam: Place dumplings in a steamer and steam for 8–10 minutes.</li>      
+                   <li>Boil: Drop dumplings into boiling water and cook for 5–7 minutes until they float and are cooked through.</li>      
+                   <li>Pan-fry: Heat a little oil in a skillet, place dumplings flat side down, fry until bottom is golden, add 1/4 cup water, cover, and steam for 5–7 minutes.</li>      
+               </ul>      
+               <li>Serve hot with dipping sauce.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 50–70 kcal per dumpling | Protein: 3–4g | Carbs: 6–8g | Fat: 2–4g | Sodium: variable <br>      '
+},'Hot Pot': {      
+    img: 'hot_pot.jpg',      
+    desc: `Flavorful Hot Pot — simmering pot of broth served with a variety of meats, seafood, vegetables, and noodles, cooked at the table for a communal meal.      
+           <br><b>Instructions:</b> Prepare broth, set out raw ingredients, cook ingredients in simmering broth, and enjoy with dipping sauces.      
+                 
+           <br><b>Ingredients:</b>      
+           Broth (chicken, beef, or vegetable) 6 cups,      
+           Thinly sliced beef, lamb, or chicken 200–300g,      
+           Seafood (shrimp, fish fillets, squid) 200g (optional),      
+           Tofu 200g (cubed),      
+           Napa cabbage 2 cups,      
+           Spinach or bok choy 2 cups,      
+           Mushrooms 1 cup (shiitake, enoki, or button),      
+           Carrots 1/2 cup sliced,      
+           Noodles 1–2 cups (optional),      
+           Garlic 2 cloves minced,      
+           Ginger 1-inch piece sliced,      
+           Green onions 2–3 chopped,      
+           Soy sauce, chili oil, sesame oil, and other dipping sauces as desired,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare the broth in a large pot: bring to a simmer with garlic, ginger, and green onions. Season with salt and soy sauce to taste.</li>      
+               <li>Set up the table with the simmering broth on a portable stove and arrange all raw ingredients around it.</li>      
+               <li>Each person selects ingredients and cooks them in the simmering broth until fully cooked (meats 2–5 minutes, vegetables 1–3 minutes, noodles 2–4 minutes depending on type).</li>      
+               <li>Use slotted spoons or chopsticks to remove cooked items and dip in sauces of choice.</li>      
+               <li>Continue cooking and eating in rounds, enjoying the communal experience.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 250–400 kcal per serving (depends on ingredients) | Protein: 20–30g | Carbs: 15–25g | Fat: 10–20g | Sodium: variable <br>      '
+},'Chow Mein': {      
+    img: 'chow_mein.jpg',      
+    desc: `Stir-fried Chow Mein — tender noodles tossed with vegetables, meat or tofu, and a savory sauce, a classic Chinese comfort food.      
+           <br><b>Instructions:</b> Cook noodles, stir-fry vegetables and protein, toss everything in sauce, and serve hot.      
+                 
+           <br><b>Ingredients:</b>      
+           Egg noodles or lo mein noodles 250g,      
+           Chicken, beef, shrimp, or tofu 200g (sliced thinly),      
+           Cabbage 1 cup shredded,      
+           Carrots 1/2 cup julienned,      
+           Bell peppers 1/2 cup sliced,      
+           Bean sprouts 1/2 cup (optional),      
+           Garlic 2 cloves minced,      
+           Soy sauce 3 tbsp,      
+           Oyster sauce 1 tbsp (optional),      
+           Sesame oil 1 tsp,      
+           Vegetable oil 2 tbsp,      
+           Salt 1/2 tsp,      
+           Black pepper 1/4 tsp,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Cook noodles according to package instructions, drain, and set aside.</li>      
+               <li>Heat vegetable oil in a large skillet or wok over medium-high heat. Add garlic and stir-fry until fragrant.</li>      
+               <li>Add protein (chicken, beef, shrimp, or tofu) and cook until almost done.</li>      
+               <li>Add vegetables and stir-fry for 2–3 minutes until slightly tender but still crisp.</li>      
+               <li>Add cooked noodles, soy sauce, oyster sauce (if using), sesame oil, salt, and black pepper. Toss everything together to combine and heat through.</li>      
+               <li>Serve hot as a main dish or side.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 400 kcal per serving | Protein: 20g | Carbs: 50g | Fat: 15g | Sodium: variable <br>      '
+},'Spring Rolls': {      
+    img: 'spring_rolls.jpg',      
+    desc: `Crispy Spring Rolls — thin pastry wrappers filled with a savory mix of vegetables and/or meat, perfect as an appetizer or snack.      
+           <br><b>Instructions:</b> Prepare filling, wrap in spring roll sheets, and deep-fry or bake until golden and crispy.      
+                 
+           <br><b>Ingredients:</b>      
+           Spring roll wrappers 10–12 sheets,      
+           Cabbage shredded 2 cups,      
+           Carrot grated 1 cup,      
+           Bell pepper 1 cup finely sliced,      
+           Bean sprouts 1 cup (optional),      
+           Green onions 3–4 chopped,      
+           Garlic 2 cloves minced,      
+           Soy sauce 2 tbsp,      
+           Salt 1 tsp (to taste),      
+           Black pepper 1/2 tsp,      
+           Oil for frying 1–2 cups,      
+           Optional protein: cooked chicken, shrimp, or tofu 1 cup,      
+           Cornstarch slurry 2 tbsp (1 tbsp cornstarch + 1 tbsp water) to seal edges,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare the filling: heat 1–2 tbsp oil in a pan, sauté garlic until fragrant.</li>      
+               <li>Add vegetables and optional protein, stir-fry for 3–5 minutes until slightly tender but still crisp.</li>      
+               <li>Add soy sauce, salt, and black pepper. Mix well and remove from heat to cool.</li>      
+               <li>Place a wrapper on a clean surface, spoon filling near one edge, fold sides in, and roll tightly. Seal edges with cornstarch slurry.</li>      
+               <li>Heat oil in a deep pan or fryer. Fry spring rolls in batches until golden brown and crispy, about 2–3 minutes per side. Drain on paper towels.</li>      
+               <li>Serve hot with sweet chili sauce, soy sauce, or your favorite dipping sauce.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 200 kcal per roll | Protein: 5g | Carbs: 25g | Fat: 10g | Sodium: variable <br>      '
+},'Multi Lemonade': {      
+    img: 'multi_lemonade.jpg',      
+    desc: `Refreshing Multi Lemonade — a vibrant blend of classic lemonade infused with mixed fruits for a colorful, flavorful twist.      
+           <br><b>Instructions:</b> Blend or muddle fruits, mix with fresh lemon juice and sugar syrup, dilute with cold water, and serve chilled over ice.      
+                 
+           <br><b>Ingredients:</b>      
+           Lemons 4–5 (freshly squeezed, about 1 cup juice),      
+           Sugar 1/2–3/4 cup (or to taste),      
+           Water 4 cups (cold),      
+           Ice cubes 1–2 cups,      
+           Mixed fruits (choose any): strawberries 1 cup, blueberries 1/2 cup, mango 1 cup, pineapple 1 cup,      
+           Mint leaves handful (optional),      
+           Honey 1–2 tbsp (optional),      
+           Sparkling water 1 cup (optional for fizzy version),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare simple syrup by dissolving sugar in 1/2 cup warm water (optional but recommended).</li>      
+               <li>Muddle or lightly blend your chosen mixed fruits until slightly pulpy.</li>      
+               <li>In a large jug, combine lemon juice, fruit mix, simple syrup (or sugar), and cold water.</li>      
+               <li>Stir well. Add honey or mint if desired.</li>      
+               <li>Taste and adjust sweetness or tartness to preference.</li>      
+               <li>Add ice cubes and optional sparkling water before serving.</li>      
+               <li>Serve chilled with lemon slices and fruit chunks for garnish.</li>      
+           </ol>`,      
+    nutrition: `Calories: 120–150 kcal per glass | Carbs: 30g | Sugars: 25g | Vitamin C: High | Fat: 0g <br>`      
+},'Strawberry Smoothie': {      
+    img: 'strawberry_smoothie.jpg',      
+    desc: `Creamy Strawberry Smoothie — a refreshing blend of fresh strawberries, yogurt, and milk for a sweet, nutritious drink.      
+           <br><b>Instructions:</b> Blend all ingredients until smooth, adjust sweetness, and serve chilled.      
+                 
+           <br><b>Ingredients:</b>      
+           Fresh strawberries 1–1.5 cups (hulled),      
+           Yogurt 1/2 cup (plain or vanilla),      
+           Milk 1/2 cup (or use almond/soy milk),      
+           Honey or sugar 1–2 tbsp (to taste),      
+           Ice cubes 4–5,      
+           Banana 1/2 (optional for creaminess),      
+           Chia seeds 1 tsp (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Wash and hull the strawberries.</li>      
+               <li>Add strawberries, yogurt, milk, and sweetener into a blender.</li>      
+               <li>Add ice cubes and optional banana or chia seeds.</li>      
+               <li>Blend on high speed until completely smooth and creamy.</li>      
+               <li>Taste and adjust sweetness or thickness (add more milk if needed).</li>      
+               <li>Pour into a glass and serve chilled.</li>      
+           </ol>`,      
+    nutrition: `Calories: 180–220 kcal per glass | Protein: 6g | Carbs: 35g | Fat: 3g | Vitamin C: High <br>`      
+},'Strawberry Smoothie': {      
+    img: 'strawberry_smoothie.jpg',      
+    desc: `Creamy Strawberry Smoothie — a refreshing blend of fresh strawberries, yogurt, and milk for a sweet, nutritious drink.      
+           <br><b>Instructions:</b> Blend all ingredients until smooth, adjust sweetness, and serve chilled.      
+                 
+           <br><b>Ingredients:</b>      
+           Fresh strawberries 1–1.5 cups (hulled),      
+           Yogurt 1/2 cup (plain or vanilla),      
+           Milk 1/2 cup (or use almond/soy milk),      
+           Honey or sugar 1–2 tbsp (to taste),      
+           Ice cubes 4–5,      
+           Banana 1/2 (optional for creaminess),      
+           Chia seeds 1 tsp (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Wash and hull the strawberries.</li>      
+               <li>Add strawberries, yogurt, milk, and sweetener into a blender.</li>      
+               <li>Add ice cubes and optional banana or chia seeds.</li>      
+               <li>Blend on high speed until completely smooth and creamy.</li>      
+               <li>Taste and adjust sweetness or thickness (add more milk if needed).</li>      
+               <li>Pour into a glass and serve chilled.</li>      
+           </ol>`,      
+    nutrition: `Calories: 180–220 kcal per glass | Protein: 6g | Carbs: 35g | Fat: 3g | Vitamin C: High <br>`      
+},'Iced Caramel Latte': {      
+    img: 'iced_caramel_latte.jpg',      
+    desc: `Smooth Iced Caramel Latte — a chilled coffee drink made with espresso, milk, and rich caramel syrup for a sweet, refreshing boost.      
+           <br><b>Instructions:</b> Prepare espresso, mix with caramel, add milk, pour over ice, and top with extra caramel drizzle.      
+                 
+           <br><b>Ingredients:</b>      
+           Espresso 1–2 shots (or strong brewed coffee 1/2 cup),      
+           Caramel syrup 2–3 tbsp (plus extra for topping),      
+           Milk 1 cup (any type),      
+           Ice cubes 1–2 cups,      
+           Whipped cream (optional),      
+           Vanilla extract 1/4 tsp (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Brew espresso or strong coffee and let it cool slightly.</li>      
+               <li>In a glass, add caramel syrup and pour the espresso over it. Stir well.</li>      
+               <li>Fill the glass with ice cubes.</li>      
+               <li>Add cold milk and optional vanilla extract. Stir to combine.</li>      
+               <li>Top with whipped cream if desired and drizzle extra caramel on top.</li>      
+               <li>Serve immediately and enjoy chilled.</li>      
+           </ol>`,      
+    nutrition: `Calories: 180–260 kcal per glass (depends on milk & caramel) | Carbs: 30–40g | Protein: 4–8g | Fat: 3–10g <br>`      
+},'Mango Milkshake': {      
+    img: 'mango_milkshake.jpg',      
+    desc: `Rich and creamy Mango Milkshake — a sweet, fruity drink made from ripe mangoes blended with milk and sugar.      
+           <br><b>Instructions:</b> Blend mango pulp with cold milk, sugar, and optional ice cream until smooth and thick.      
+                 
+           <br><b>Ingredients:</b>      
+           Ripe mangoes 2 (or 1.5 cups mango pulp),      
+           Cold milk 1–1.5 cups,      
+           Sugar or honey 1–2 tbsp (to taste),      
+           Ice cubes 4–5 (optional),      
+           Vanilla ice cream 1–2 scoops (optional for extra creaminess),      
+           Cardamom powder 1 pinch (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Peel and chop mangoes, or use ready mango pulp.</li>      
+               <li>Add mango, milk, and sugar/honey to a blender.</li>      
+               <li>Add optional ice cubes or vanilla ice cream.</li>      
+               <li>Blend on high speed until thick, smooth, and creamy.</li>      
+               <li>Taste and adjust sweetness or thickness (add more milk if needed).</li>      
+               <li>Pour into a chilled glass and serve immediately.</li>      
+           </ol>`,      
+    nutrition: `Calories: 220–320 kcal per glass | Carbs: 45g | Protein: 5g | Fat: 3–10g (higher if using ice cream) <br>`      
+},'Peach Iced Tea': {      
+    img: 'peach_iced_tea.jpg',      
+    desc: `Refreshing Peach Iced Tea — a chilled, fruity tea infused with sweet peach syrup and served over ice.      
+           <br><b>Instructions:</b> Brew tea, prepare peach syrup, mix together, chill, and serve over ice with peach slices.      
+                 
+           <br><b>Ingredients:</b>      
+           Black tea bags 2–3,      
+           Water 3 cups (for tea),      
+           Fresh peaches 2 (or 1 cup peach puree),      
+           Sugar 1/4–1/2 cup (to taste),      
+           Water 1 cup (for syrup),      
+           Lemon juice 1 tbsp (optional),      
+           Ice cubes 1–2 cups,      
+           Peach slices for garnish,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Boil 3 cups water and steep tea bags for 5–7 minutes. Remove tea bags and let the tea cool.</li>      
+               <li>Prepare peach syrup: in a saucepan, add chopped peaches, 1 cup water, and sugar. Cook for 5–10 minutes until soft.</li>      
+               <li>Blend or mash the cooked peaches, then strain to make a smooth syrup.</li>      
+               <li>Mix the cooled tea with the peach syrup and optional lemon juice.</li>      
+               <li>Chill in the refrigerator for at least 1 hour.</li>      
+               <li>Serve over ice and garnish with peach slices.</li>      
+           </ol>`,      
+    nutrition: `Calories: 90–140 kcal per glass | Carbs: 20–30g | Sugars: variable | Fat: 0g <br>`      
+},'Blueberry Mojito': {      
+    img: 'blueberry_mojito.jpg',      
+    desc: `Refreshing Blueberry Mojito — a vibrant, fruity twist on the classic mojito made with fresh blueberries, mint, lime, and sparkling water.      
+           <br><b>Instructions:</b> Muddle blueberries and mint, add lime and sweetener, top with ice and sparkling water, and serve chilled.      
+                 
+           <br><b>Ingredients:</b>      
+           Fresh blueberries 1 cup,      
+           Mint leaves handful,      
+           Lime 1 (cut into wedges),      
+           Sugar or simple syrup 1–2 tbsp (to taste),      
+           Sparkling water or soda 1 cup,      
+           Ice cubes 1–2 cups,      
+           Blueberry syrup (optional) 1 tbsp,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Add blueberries, mint leaves, and lime wedges to a glass.</li>      
+               <li>Muddle gently to release juices and aromas.</li>      
+               <li>Add sugar or simple syrup and mix well.</li>      
+               <li>Fill the glass with ice cubes.</li>      
+               <li>Pour sparkling water or soda over the mixture.</li>      
+               <li>Stir lightly and add optional blueberry syrup for extra flavor.</li>      
+               <li>Garnish with mint leaves and whole blueberries. Serve chilled.</li>      
+           </ol>`,      
+    nutrition: `Calories: 60–90 kcal per glass | Carbs: 15–20g | Sugars: variable | Fat: 0g <br>`      
+},'Watermelon Cooler': {      
+    img: 'watermelon_cooler.jpg',      
+    desc: `Refreshing Watermelon Cooler — a hydrating, summery drink made with fresh watermelon, lime, and mint. Perfect for hot days.      
+           <br><b>Instructions:</b> Blend watermelon, strain if desired, mix with lime and mint, add ice, and serve chilled.      
+                 
+           <br><b>Ingredients:</b>      
+           Watermelon cubes 3 cups (seedless preferred),      
+           Lime juice 2 tbsp,      
+           Mint leaves 6–8,      
+           Sugar or honey 1–2 tsp (optional),      
+           Ice cubes 1–2 cups,      
+           Sparkling water 1/2 cup (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Blend watermelon cubes until smooth.</li>      
+               <li>Strain the juice if you want a smoother texture (optional).</li>      
+               <li>Add lime juice and optional sugar/honey. Mix well.</li>      
+               <li>Add crushed or whole ice to a glass.</li>      
+               <li>Pour the watermelon mixture over the ice.</li>      
+               <li>Top with optional sparkling water for a fizzy version.</li>      
+               <li>Garnish with mint leaves and serve chilled.</li>      
+           </ol>`,      
+    nutrition: `Calories: 50–80 kcal per glass | Carbs: 12–18g | Sugars: natural | Fat: 0g | Hydration: High <br>`      
+},'Apple Cider Drink': {      
+    img: 'apple_cider_drink.jpg',      
+    desc: `Warm or chilled Apple Cider Drink — a spiced, fruity beverage made with fresh apple juice and aromatic spices, perfect for any season.      
+           <br><b>Instructions:</b> Heat or chill apple juice, add spices and sweetener, simmer or stir, and serve garnished with apple slices or cinnamon.      
+                 
+           <br><b>Ingredients:</b>      
+           Apple juice 2 cups (fresh or store-bought),      
+           Cinnamon stick 1,      
+           Cloves 2–3,      
+           Star anise 1 (optional),      
+           Nutmeg 1/4 tsp (optional),      
+           Lemon juice 1 tbsp,      
+           Honey or sugar 1–2 tbsp (to taste),      
+           Ice cubes 1–2 cups (for chilled version),      
+           Apple slices for garnish,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>In a saucepan, combine apple juice, cinnamon stick, cloves, star anise, and nutmeg.</li>      
+               <li>Heat gently over medium heat for 5–10 minutes to allow spices to infuse. Do not boil.</li>      
+               <li>Add lemon juice and sweetener (honey or sugar) to taste. Stir to combine.</li>      
+               <li>For warm drink: serve immediately garnished with apple slices.</li>      
+               <li>For chilled drink: let mixture cool, strain spices, pour over ice, and garnish with apple slices.</li>      
+           </ol>`,      
+    nutrition: `Calories: 100–150 kcal per serving | Carbs: 25–30g | Sugars: 22–28g | Fat: 0g | Vitamin C: Moderate <br>`      
+},'Lahmacun': {      
+    img: 'lahmacun.jpg',      
+    desc: `Thin Turkish-style flatbread topped with a spiced minced meat mixture — often called "Turkish pizza." Perfect for a light meal or snack.      
+           <br><b>Instructions:</b> Prepare dough, mix spiced meat topping, spread over rolled dough, bake until crisp, and serve with fresh vegetables.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Dough:</b>      
+           All-purpose flour 2 cups,      
+           Yeast 1 tsp,      
+           Sugar 1 tsp,      
+           Salt 1/2 tsp,      
+           Warm water 3/4 cup,      
+           Olive oil 1 tbsp,      
+           
+           <br><b>For Topping:</b>      
+           Ground lamb or beef 250g,      
+           Onion 1 small (finely chopped),      
+           Tomato 1 small (finely chopped),      
+           Red bell pepper 1 (finely chopped),      
+           Garlic 2 cloves (minced),      
+           Tomato paste 1 tbsp,      
+           Paprika 1 tsp,      
+           Cumin 1/2 tsp,      
+           Salt & pepper to taste,      
+           Fresh parsley 2 tbsp (chopped),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare dough: Mix yeast, sugar, and warm water. Let sit 5–10 minutes until foamy.</li>      
+               <li>Add flour, salt, and olive oil. Knead until smooth and elastic. Cover and let rise 1 hour.</li>      
+               <li>Prepare topping: Mix ground meat, onion, tomato, bell pepper, garlic, tomato paste, and spices. Add parsley and mix well.</li>      
+               <li>Preheat oven to 220°C (425°F).</li>      
+               <li>Divide dough into small balls, roll out thinly into rounds (8–10 inches).</li>      
+               <li>Spread a thin layer of meat mixture evenly over each round.</li>      
+               <li>Bake for 8–12 minutes until edges are crisp and topping is cooked.</li>      
+               <li>Serve hot, garnished with lemon wedges, fresh parsley, and optional vegetables like sliced tomatoes or cucumber.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 250–350 kcal per serving | Carbs: 35–40g | Protein: 12–15g | Fat: 8–12g | Sodium: variable <br>  '    
+},'Baklawa': {      
+    img: 'baklawa.jpg',      
+    desc: `Sweet and flaky Baklawa — a rich Middle Eastern dessert made with layers of phyllo pastry, chopped nuts, butter, and soaked in fragrant sugar syrup.      
+           <br><b>Instructions:</b> Layer phyllo sheets with nuts and butter, bake until golden, pour sugar syrup over hot pastry, and let absorb before serving.      
+                 
+           <br><b>Ingredients:</b>      
+           Phyllo sheets 200g,      
+           Unsalted butter 100g (melted),      
+           Chopped nuts 1 cup (walnuts, pistachios, or almonds),      
+           Sugar 1 cup,      
+           Water 1/2 cup,      
+           Lemon juice 1 tsp,      
+           Honey 2 tbsp (optional),      
+           Ground cinnamon 1/2 tsp (optional),      
+           Rose water 1 tsp (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Preheat oven to 180°C (350°F).</li>      
+               <li>Layer phyllo sheets in a greased baking dish, brushing each sheet lightly with melted butter.</li>      
+               <li>After 4–5 layers, sprinkle a layer of chopped nuts and a pinch of cinnamon.</li>      
+               <li>Repeat layering phyllo sheets and nuts until all are used, ending with phyllo sheets on top.</li>      
+               <li>Cut into diamond or square shapes before baking.</li>      
+               <li>Bake for 35–40 minutes until golden and crisp.</li>      
+               <li>Prepare syrup: Boil sugar, water, lemon juice, and honey until slightly thick. Add rose water if using.</li>      
+               <li>Pour warm syrup over hot baklawa immediately after baking.</li>      
+               <li>Let absorb for a few hours before serving.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 250–300 kcal per piece | Carbs: 30–35g | Protein: 3–5g | Fat: 12–18g | Sugar: High <br>  '    
+},'Menemen': {      
+    img: 'menemen.jpg',      
+    desc: `Traditional Turkish Menemen — a flavorful scrambled egg dish cooked with tomatoes, green peppers, onions, and spices, perfect for breakfast or brunch.      
+           <br><b>Instructions:</b> Sauté vegetables, add spices, crack eggs, cook gently until just set, and serve hot with bread.      
+                 
+           <br><b>Ingredients:</b>      
+           Eggs 4,      
+           Tomatoes 3 medium (finely chopped),      
+           Green bell peppers 2 (chopped),      
+           Onion 1 small (optional, chopped),      
+           Olive oil 2 tbsp,      
+           Salt 1/2 tsp (to taste),      
+           Black pepper 1/4 tsp,      
+           Red chili flakes 1/4 tsp (optional),      
+           Fresh parsley for garnish,      
+           Bread for serving,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Heat olive oil in a skillet over medium heat. Sauté onions (if using) until translucent.</li>      
+               <li>Add chopped green peppers and cook 3–4 minutes until softened.</li>      
+               <li>Add chopped tomatoes and cook until they release juice and soften, about 5–7 minutes.</li>      
+               <li>Season with salt, black pepper, and chili flakes if desired.</li>      
+               <li>Crack eggs directly into the pan and stir gently to combine with vegetables. Cook until eggs are just set but still creamy.</li>      
+               <li>Garnish with fresh parsley.</li>      
+               <li>Serve hot with crusty bread or pita for dipping.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 250–300 kcal per serving | Carbs: 10–12g | Protein: 14–16g | Fat: 18–20g | Sodium: variable <br>     ' 
+},'Turkish Pide': {      
+    img: 'turkish_pide.jpg',      
+    desc: `Soft and chewy Turkish Pide — a boat-shaped flatbread topped with seasoned ground meat, cheese, or vegetables, baked to golden perfection.      
+           <br><b>Instructions:</b> Prepare dough, roll into boat shapes, add toppings, bake, and serve hot.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Dough:</b>      
+           All-purpose flour 2 cups,      
+           Yeast 1 tsp,      
+           Sugar 1 tsp,      
+           Salt 1/2 tsp,      
+           Warm water 3/4 cup,      
+           Olive oil 1 tbsp,      
+           
+           <br><b>For Meat Topping:</b>      
+           Ground beef or lamb 250g,      
+           Onion 1 small (finely chopped),      
+           Tomato 1 small (finely chopped),      
+           Green bell pepper 1 (finely chopped),      
+           Garlic 1 clove (minced),      
+           Tomato paste 1 tbsp,      
+           Paprika 1 tsp,      
+           Cumin 1/2 tsp,      
+           Salt & pepper to taste,      
+           Fresh parsley 2 tbsp (chopped),      
+           Optional: shredded cheese 1/2 cup,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare dough: Mix yeast, sugar, and warm water. Let sit 5–10 minutes until foamy.</li>      
+               <li>Add flour, salt, and olive oil. Knead until smooth. Cover and let rise for 1 hour.</li>      
+               <li>Prepare topping: Sauté onion, garlic, bell pepper, and tomato. Add ground meat, tomato paste, and spices. Cook until meat is done. Stir in parsley.</li>      
+               <li>Preheat oven to 220°C (425°F).</li>      
+               <li>Divide dough into 2–3 balls, roll into oval/boat shapes. Pinch edges slightly to form a boat.</li>      
+               <li>Fill the center with meat mixture. Add shredded cheese on top if desired.</li>      
+               <li>Bake for 12–15 minutes until dough is golden and cooked through.</li>      
+               <li>Serve hot, garnished with fresh parsley or a squeeze of lemon.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 300–400 kcal per pide | Carbs: 35–45g | Protein: 15–20g | Fat: 12–18g | Sodium: variable <br> '     
+},'Gozleme': {      
+    img: 'gozleme.jpg',      
+    desc: `Savory Turkish flatbread — Gözleme is a thin, hand-rolled dough filled with ingredients like spinach, cheese, or minced meat, then cooked on a griddle until golden and crispy.      
+           <br><b>Instructions:</b> Prepare dough, roll thin, add filling, fold, and cook on a hot griddle until golden brown.      
+                 
+           <br><b>Ingredients:</b>      
+           <b>For Dough:</b>      
+           All-purpose flour 2 cups,      
+           Salt 1/2 tsp,      
+           Warm water 3/4 cup (adjust as needed),      
+           Olive oil 1 tbsp,      
+           
+           <br><b>For Filling Options:</b>      
+           Spinach 1 cup (chopped),      
+           Feta cheese 1/2 cup (crumbled),      
+           Minced beef or lamb 150g (cooked and seasoned),      
+           Onion 1 small (optional, chopped),      
+           Salt & pepper to taste,      
+           Red pepper flakes (optional),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare dough: Mix flour and salt, add water gradually, and knead until smooth and elastic. Rest covered for 30 minutes.</li>      
+               <li>Divide dough into balls and roll each ball into a thin circle (8–10 inches).</li>      
+               <li>Place desired filling on one half of the circle, leaving edges free. Fold dough over filling and press edges to seal.</li>      
+               <li>Heat a griddle or non-stick pan over medium heat. Cook Gözleme for 2–3 minutes per side until golden and crisp, brushing lightly with olive oil if desired.</li>      
+               <li>Serve hot, optionally with yogurt or fresh salad.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 250–350 kcal per serving | Carbs: 35–45g | Protein: 10–15g | Fat: 10–15g | Sodium: variable <br> '     
+}
+,'Kunefe': {      
+    img: 'kunefe.jpg',      
+    desc: `Sweet and cheesy Kunefe — a traditional Middle Eastern dessert made with shredded phyllo (kataifi), layered with soft cheese, baked until golden, and soaked in fragrant sugar syrup.      
+           <br><b>Instructions:</b> Layer shredded pastry with cheese, bake until crisp, pour warm syrup over, and garnish with nuts.      
+                 
+           <br><b>Ingredients:</b>      
+           Kataifi (shredded phyllo dough) 250g,      
+           Unsalted cheese 150g (like mozzarella or Akkawi, soaked if salty),      
+           Unsalted butter 100g (melted),      
+           Sugar 1 cup,      
+           Water 1/2 cup,      
+           Lemon juice 1 tsp,      
+           Rose water or orange blossom water 1 tsp (optional),      
+           Pistachios 2 tbsp (chopped, for garnish),      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Preheat oven to 180°C (350°F).</li>      
+               <li>Separate and fluff kataifi dough. Mix with melted butter until well coated.</li>      
+               <li>Grease a baking dish. Place half of the buttered kataifi at the bottom and press lightly.</li>      
+               <li>Layer cheese evenly over the pastry.</li>      
+               <li>Cover with remaining kataifi, pressing gently.</li>      
+               <li>Bake for 25–30 minutes until golden and crisp.</li>      
+               <li>Prepare sugar syrup by boiling sugar, water, and lemon juice until slightly thick. Add rose or orange blossom water if desired.</li>      
+               <li>Remove Kunefe from oven and pour warm syrup evenly over it.</li>      
+               <li>Garnish with chopped pistachios and serve warm.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 400–500 kcal per serving | Carbs: 45–55g | Protein: 8–10g | Fat: 20–25g | Sugar: High <br>  '   
+}
+,'Mercimek Corbasi': {      
+    img: 'mercimek_corbasi.jpg',      
+    desc: `Classic Turkish Red Lentil Soup — Mercimek Çorbası is a comforting, smooth soup made from red lentils, vegetables, and mild spices.      
+           <br><b>Instructions:</b> Sauté vegetables, add lentils and water, cook until soft, blend to a smooth consistency, and season.      
+                 
+           <br><b>Ingredients:</b>      
+           Red lentils 1 cup,      
+           Onion 1 medium (chopped),      
+           Carrot 1 medium (chopped),      
+           Potato 1 small (chopped),      
+           Garlic 2 cloves (minced),      
+           Tomato paste 1 tbsp,      
+           Olive oil 2 tbsp,      
+           Water or vegetable broth 4 cups,      
+           Salt 1 tsp (to taste),      
+           Black pepper 1/2 tsp,      
+           Paprika 1/2 tsp (optional),      
+           Lemon wedges for serving,      
+           Fresh parsley for garnish,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Heat olive oil in a pot and sauté onions, garlic, carrot, and potato for 3–4 minutes until softened.</li>      
+               <li>Add tomato paste and cook for another minute.</li>      
+               <li>Add red lentils and water or broth. Bring to a boil, then reduce heat and simmer for 20–25 minutes until lentils and vegetables are soft.</li>      
+               <li>Use an immersion blender or regular blender to puree the soup until smooth.</li>      
+               <li>Season with salt, pepper, and paprika if using.</li>      
+               <li>Serve hot, garnished with fresh parsley and a squeeze of lemon.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 180–220 kcal per serving | Carbs: 30–35g | Protein: 10–12g | Fat: 4–6g | Fiber: High <br> '     
+}
+,'Dolma': {      
+    img: 'dolma.jpg',      
+    desc: `Flavorful stuffed vegetables — Dolma is a traditional Middle Eastern and Mediterranean dish made by filling grape leaves or vegetables with a spiced rice and herb mixture.      
+           <br><b>Instructions:</b> Prepare the filling, stuff vegetables or grape leaves, simmer in a light sauce, and serve warm or at room temperature.      
+                 
+           <br><b>Ingredients:</b>      
+           Grape leaves 20–25 (blanched) or vegetables like bell peppers, zucchini, tomatoes, or eggplants,      
+           Rice 1 cup (short-grain or medium-grain),      
+           Onion 1 medium (finely chopped),      
+           Olive oil 3 tbsp,      
+           Pine nuts 2 tbsp (optional),      
+           Currants or raisins 2 tbsp (optional),      
+           Fresh herbs: parsley 2 tbsp, dill 1 tbsp, mint 1 tbsp (chopped),      
+           Salt 1 tsp,      
+           Black pepper 1/2 tsp,      
+           Lemon juice 2 tbsp,      
+           Water or vegetable broth 1–1.5 cups,      
+                 
+           <br><b>Recipe:</b>      
+           <ol>      
+               <li>Prepare the filling: In a pan, heat olive oil and sauté onions until soft.</li>      
+               <li>Add rice, pine nuts, currants, herbs, salt, and pepper. Cook for 2–3 minutes until fragrant.</li>      
+               <li>Add 1/4 cup water, cover, and simmer until rice is partially cooked (about 5–7 minutes). Remove from heat and let cool slightly.</li>      
+               <li>For grape leaves: place a spoonful of filling on each leaf and roll tightly, tucking in the sides.</li>      
+               <li>For vegetables: hollow out bell peppers, tomatoes, or zucchinis and fill with prepared rice mixture.</li>      
+               <li>Place stuffed vegetables or leaves in a pot snugly. Drizzle olive oil and lemon juice over them. Add enough water or broth to cover halfway.</li>      
+               <li>Cover and simmer on low heat for 25–35 minutes until rice and vegetables are fully cooked.</li>      
+               <li>Serve warm or at room temperature, garnished with fresh herbs and lemon slices.</li>      
+           </ol>`,      
+    nutrition: 'Calories: 180–220 kcal per serving | Carbs: 30–35g | Protein: 4–6g | Fat: 6–10g | Fiber: Moderate <br> '     
+}
+
+
+
+
+
+
+
+
+};
+
+        if (title && recipes[title]) {
+            const recipe = recipes[title];
+            document.getElementById('recipe-detail').innerHTML = `
+                <img src="${recipe.img}" alt="${title}">
+                <h2>${title}</h2>
+                <p>${recipe.desc}</p>
+                <p><strong>Nutrition Facts:</strong> ${recipe.nutrition}</p>
+                <div class="actions">
+                    <button onclick="alert('Added to favorites!')">Add to Favorites</button>
+                    <button onclick="alert('Rated!')">Rate Recipe</button>
+                </div>
+            `;
+        } else {
+            document.getElementById('recipe-detail').innerHTML = '<p>Recipe not found.</p>';
+        }
+        
+    </script>
+</body>
+</html>

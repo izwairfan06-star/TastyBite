@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beverages</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+     footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 2rem; }
+      nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav h1 { font-size: 2rem; }
+    nav ul { list-style: none; display: flex; }        nav ul li { margin-left: 1rem; }
+    nav ul li a { color: white; text-decoration: none; padding: 0.5rem; }
+    nav ul li a:hover { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .actions{
+        padding: 1rem; display: flex; justify-content: space-between; 
+    }
+    .actions button{
+        background: #e74c3c; color: white; border: none; padding: 0.5rem; cursor: pointer; border-radius: 4px; }
+    .actions button:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <header style="background: #e74c3c; color: white;  text-align: center; padding: 1rem; height: 80px; width: 1300px;">
+        <nav>
+            <h1 style="font-size: 2rem;">TastyBite</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="upload.html">Upload Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <nav style="background-color: #de2915; margin-top: 15px; height: 50px; justify-content: space-evenly; align-items: center; ">
+            <ul>
+                <li><a href="fastfood.html">Fast Foods</a></li>
+                <li><a href="Traditional.html">Traditional Foods</a></li>
+                <li><a href="Streetfood.html">Street Foods</a></li>
+                <li><a href="Appetizer.html">Appitizers</a></li>
+                <li><a href="chineese.html">Chineese</a></li>
+                <li><a href="turkish.html">Turkish Foods</a></li>
+                <li><a href="desserts.html">Desserts</a></li>
+                <li><a href="beverages.html">Beverages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="index" style="display: flex; justify-content: space-between; padding-top: 6%;">
+        <p><b style="font-size: larger; text-decoration: underline;">Beverages:</b>From bold coffees to gentle teas, every sip carries a mood.Cold drinks refresh the body, warm cups steady the soul.Whatever the glass holds, it becomes a moment poured just for you.#FoodieParadise#HappyRecipes#FoodLoversDelight<br><br><b style="text-decoration: underline;">Contact:</b> +92 309566755 / +92 333 4445557<br><br><b style="text-decoration: underline;">Email:</b>  tastybite123@gamil.com / TastyBites098@gmail.com <br><br><b style="text-decoration: underline;">Link:</b> https://www.tastybite.com</p>
+        <br>
+        <img src="beverages.jpg" style="margin: 0%; height: 300px; width: 1000px;">
+    </div>
+    <h2>Beverages Recipes:</h2>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--1. Multi Lemonade-->
+        <div style="height: 400px; width: 400px;"><h3>Multi Lemonade</h3><div style="background-image: url('multi_lemonade.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Multi Lemonade')">View Recipe</button><button><a href="https://youtu.be/mVQOwak1vUA?si=5UaHMvwaaVfHzJBo" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--2.	Strawberry smoothie-->
+        <div style="height: 400px; width: 400px;"><h3>Strawberry Smoothie</h3><div style="background-image: url('strawberry_smoothie.jpg'); height: 300px; width: 300px; background-size: cover; "></div> <div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Strawberry Smoothie')">View Recipe</button><button><a href="https://youtu.be/a9yh08rZFs8?si=go29uBFce6GLV8_z" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--3.Iced Caramel Latte -->
+        <div style="height: 400px; width: 400px;"><h3>Iced Caramel Latte</h3><div style="background-image: url('iced_caramel_latte.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Iced Caramel Latte')">View Recipe</button><button><a href="https://youtu.be/1PhYyaPEgKc?si=GhTexu-9fxH_Qzny" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--4. Mango Milkshake-->
+        <div style="height: 400px; width: 400px;"><h3>Mango Milkshake</h3><div style="background-image: url('mango_milkshake.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Mango Milkshake')">View Recipe</button><button><a href="https://youtu.be/5uXAbI1WmbQ?si=9wDUDFL6ABwjEy5U" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-left: 1rem;">
+        <!--5.Peach Iced Tea -->
+        <div style="height: 400px; width: 400px;"><h3>Peach Iced Tea</h3><div style="background-image: url('peach_iced_tea.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Peach Iced Tea')">View Recipe</button><button><a href="https://youtu.be/vsPNL5qCltM?si=WbF66P9CliyC64zt" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--6. Blueberry Mojito-->
+        <div style="height: 400px; width: 400px;"><h3>Blueberry Mojito</h3><div style="background-image: url('blueberry_mojito.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Blueberry Mojito')">View Recipe</button><button><a href="https://youtu.be/55LjdOf1--k?si=Cz1jJdO_7o8ZJ8KH" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--7. Watermelon Cooler-->
+        <div style="height: 400px; width: 400px;"><h3>Watermelon Cooler </h3><div style="background-image: url('watermelon_cooler.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Watermelon Cooler')">View Recipe</button><button><a href="https://youtu.be/3OIAh1te9Dg?si=iMNlUiz6KPScqLCw" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+        <!--8.Apple Cider Drink-->
+        <div style="height: 400px; width: 400px;"><h3>Apple Cider Drink</h3><div style="background-image: url('apple_cider_drink.jpg'); height: 300px; width: 300px; background-size: cover; "></div><div class="actions"><button class="favorite-btn">Add to Favorites</button><button class="view-btn" onclick="viewRecipe('Apple Cider Drink')">View Recipe</button><button><a href="https://youtu.be/T7glpazMgko?si=BNNOCKU1HAbEfJj7" style="text-decoration: none; color: white;">Watch</a></button></div></div>
+    </div>
+    <footer>
+        <p>&copy; 2025 TastyBite. All rights reserved.</p>
+    </footer>
+    <script>
+        // View recipe (redirects to detail page)
+        function viewRecipe(title) {
+            window.location.href = `recipe-detail.html?title=${encodeURIComponent(title)}`;
+        }
+        // Favorite buttons
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Added to favorites!');
+            });
+        });
+    </script>
+</body>
+</html>
